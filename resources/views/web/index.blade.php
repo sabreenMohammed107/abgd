@@ -19,7 +19,7 @@
                     </p>
                 </div>
                 <div class="col-lg-4">
-                    <img class="w-100" src="{{ asset('webassets/imgs/02.png')}}" alt="">
+                    <img class="w-100"  src="{{ asset('webassets/imgs/02.png')}}" alt="companyContact">
                 </div>
             </div>
         </div>
@@ -49,7 +49,7 @@
                     <div class="content">
                         <a href="loan_request.html" target="_blank">
                             <div class="content-overlay"></div>
-                            <img class="content-image why-img" src="{{ asset('uploads/why_us') }}/{{ $whyRow->image }}">
+                            <img class="content-image why-img" alt="{{ $whyRow->image }}" src="{{ asset('uploads/why_us') }}/{{ $whyRow->image }}">
                             <div class="content-details fadeIn-bottom">
                                 <b class="text-white">Join Us	<i class="fa-solid fa-link"></i> </b>
                             </div>
@@ -130,7 +130,7 @@
         <div class="container container2">
             <div class="row">
                 <div class="col-lg-4 col-md-5 col-sm-12">
-                    <img class="w-100 join-img" src="{{ asset('webassets/imgs/12.png')}}" alt="">
+                    <img class="w-100 join-img"  src="{{ asset('webassets/imgs/12.png')}}" alt="join-img">
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12 join-text">
                     <h2 class="dir-text">
@@ -162,7 +162,7 @@
         </div>
         <div class="customer-logos slider">
             @foreach ($partenters as $partenter)
-            <div class="slide"><img src="{{ asset('uploads/partners') }}/{{ $partenter->logo }}"></div>
+            <div class="slide"><img alt="{{ $partenter->logo }}" src="{{ asset('uploads/partners') }}/{{ $partenter->logo }}"></div>
             @endforeach
 
 

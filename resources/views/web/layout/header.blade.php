@@ -1,7 +1,7 @@
 <section class="hero-sec">
     <nav class="navbar navbar-expand-lg mb-4">
         <div class="container" dir="rtl">
-            <a class="navbar-brand" href="{{ LaravelLocalization::localizeUrl('/') }}"><img src="{{ asset('webassets/imgs/logo.png') }}"
+            <a class="navbar-brand" href="{{ LaravelLocalization::localizeUrl('/') }}"><img alt="logo" src="{{ asset('webassets/imgs/logo.png') }}"
                     class="logo pl-2" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,13 +86,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 service-text">
-                    <h1 class="dir-text">
+                    <h4 class="dir-text">
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                             {{ $companyContact->overview_title_en }}
                         @else
                             {{ $companyContact->overview_title_ar }}
                         @endif
-                    </h1>
+                    </h4>
                     <p class="dir-text">
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                             {{ strip_tags(str_limit($companyContact->overview_text_en ?? '', $limit = 200, $end = '...')) }}
@@ -112,7 +112,7 @@
                             <div class="ss-single">
                                 <div style="position:relative">
                                     <img class="slider-img"
-                                        src="{{ asset('uploads/sliders') }}/{{ $slider->image }}" alt="">
+                                        src="{{ asset('uploads/sliders') }}/{{ $slider->image }}" alt="{{ $slider->image }}">
                                     <div class="slider-tag">
                                         <h6>
                                             @if (LaravelLocalization::getCurrentLocale() === 'en')

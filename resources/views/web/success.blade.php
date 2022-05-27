@@ -23,7 +23,7 @@
         </div>
         <div class="row justify-content-center">
             <div  class="col-lg-12 col-md-12">
-                <img src="{{ asset('webassets/imgs/20.png')}}" style="width:100%;height:400px" />
+                <img src="{{ asset('webassets/imgs/20.png')}}" alt="success" style="width:100%;height:400px" />
             </div>
         </div>
     </div>

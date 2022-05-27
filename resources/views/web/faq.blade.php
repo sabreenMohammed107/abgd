@@ -36,7 +36,7 @@
         </div>
         <div class="customer-logos slider">
             @foreach ($partenters as $partenter)
-            <div class="slide"><img src="{{ asset('uploads/partners') }}/{{ $partenter->logo }}"></div>
+            <div class="slide"><img alt="{{ $partenter->logo }}" src="{{ asset('uploads/partners') }}/{{ $partenter->logo }}"></div>
             @endforeach
         </div>
     </div>

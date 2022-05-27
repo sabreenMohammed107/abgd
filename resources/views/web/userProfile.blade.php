@@ -121,7 +121,7 @@
                 </form>
             </div>
             <div  class="col-lg-6 col-md-12">
-                <img src="{{ asset('webassets/imgs/18.png')}}" style="max-width:100%;height:400px" />
+                <img src="{{ asset('webassets/imgs/18.png')}}" alt="success" style="max-width:100%;height:400px" />
             </div>
         </div>
     </div>
