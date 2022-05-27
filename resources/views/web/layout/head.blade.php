@@ -22,8 +22,7 @@
         <meta name="description" content="ABGAD very important to give aloan to parents to schools. ABGAD very important to give aloan to parents to schools">
         <meta name="keywords" content="ABGAD,aloan,قروض ,schools,parents,ابجد ,مدارس">
         <meta name="author" content="sabreen mohammed & senior steps">
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<!-- Favicon -->
 	<link href="{{ asset('webassets/imgs/logo.png')}}" rel="shortcut icon" />
 	<!-- Fontawesome -->
