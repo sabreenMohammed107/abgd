@@ -86,13 +86,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 service-text">
-                    <h4 class="dir-text">
+                    <h1 class="dir-text">
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                             {{ $companyContact->overview_title_en }}
                         @else
                             {{ $companyContact->overview_title_ar }}
                         @endif
-                    </h4>
+                    </h1>
                     <p class="dir-text">
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
                             {{ strip_tags(str_limit($companyContact->overview_text_en ?? '', $limit = 200, $end = '...')) }}
