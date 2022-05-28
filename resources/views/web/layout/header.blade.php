@@ -1,7 +1,7 @@
 <section class="hero-sec">
     <nav class="navbar navbar-expand-lg mb-4">
         <div class="container" dir="rtl">
-            <a class="navbar-brand" href="{{ LaravelLocalization::localizeUrl('/') }}"><img alt="logo" src="{{ asset('webassets/imgs/logo.png') }}"
+            <a class="navbar-brand" href="{{ LaravelLocalization::localizeUrl('/') }}"><img alt="logo" src="{{ asset('webassets/imgs/logo.webp') }}"
                     class="logo pl-2" /></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

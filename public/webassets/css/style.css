@@ -226,7 +226,7 @@ body {
         padding-left: 50px !important;
     }
     .hero-sec {
-        background-image: url(../imgs/03-.png) !important;
+        background-image: url(../imgs/03-.webp) !important;
         border-bottom-left-radius: 5rem;
         border-bottom-right-radius: 5rem;
     }
@@ -654,7 +654,7 @@ body {
 }
 
 .login-sec {
-    background-image: url(../imgs/19.png);
+    background-image: url(../imgs/19.webp);
 }
 
 .login-sec h2 {
@@ -668,7 +668,7 @@ body {
 }
 
 .hero-sec {
-    background-image: url(../imgs/03.png);
+    background-image: url(../imgs/03.webp);
     height: 570px;
     padding-bottom: 250px;
     background-repeat: no-repeat;
@@ -684,7 +684,7 @@ body {
 }
 
 .about-sec {
-    background-image: url(../imgs/04.png);
+    background-image: url(../imgs/04.webp);
     padding-top: 50px;
 }
 
@@ -717,7 +717,7 @@ body {
 }
 
 .why-us {
-    background-image: url(../imgs/05.png);
+    background-image: url(../imgs/05.webp);
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 60px;
@@ -731,11 +731,11 @@ body {
 }
 
 .success-sec {
-    background-image: url(../imgs/21.png);
+    background-image: url(../imgs/21.webp);
 }
 
 .bg-2 {
-    background-image: url(../imgs/03-2.png);
+    background-image: url(../imgs/03-2.webp);
 }
 
 .heading-section h2 {
@@ -777,7 +777,7 @@ body {
 }
 
 .how-sec {
-    background-image: url(../imgs/10.png);
+    background-image: url(../imgs/10.webp);
     background-position: top right;
     padding-top: 80px;
     padding-bottom: 80px;
@@ -855,7 +855,7 @@ body {
 }
 
 .join-sec {
-    background-image: url(../imgs/11.png);
+    background-image: url(../imgs/11.webp);
     background-repeat: no-repeat;
 }
 
@@ -1161,7 +1161,7 @@ select {
         padding: 10px 0;
     }
     .join-sec {
-        background-image: url(../imgs/03-.png)!important;
+        background-image: url(../imgs/03-.webp)!important;
         background-position: bottom !important;
         background-repeat: no-repeat;
         padding-bottom: 20px;
@@ -1247,7 +1247,7 @@ select {
 
 @media (min-width: 320px) and (max-width: 499px) {
     .hero-sec {
-        background-image: url(../imgs/03-.png)!important;
+        background-image: url(../imgs/03-.webp)!important;
         border-bottom-right-radius: 5rem;
         background-size: cover;
     }
@@ -1261,7 +1261,7 @@ select {
 
 @media (min-width: 500px) and (max-width: 899px) {
     .hero-sec {
-        background-image: url(../imgs/03-.png)!important;
+        background-image: url(../imgs/03-.webp)!important;
         border-bottom-right-radius: 5rem;
         background-size: cover;
     }

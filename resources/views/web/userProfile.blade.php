@@ -121,7 +121,7 @@
                 </form>
             </div>
             <div  class="col-lg-6 col-md-12">
-                <img src="{{ asset('webassets/imgs/18.png')}}" alt="success" style="max-width:100%;height:400px" />
+                <img src="{{ asset('webassets/imgs/18.webp')}}" alt="success" style="max-width:100%;height:400px" />
             </div>
         </div>
     </div>
@@ -136,7 +136,7 @@
         </div>
         <div class="customer-logos slider">
             @foreach ($partenters as $partenter)
-            <div class="slide"><img src="{{ asset('uploads/partners') }}/{{ $partenter->logo }}"></div>
+            <div class="slide"><img  alt="{{ $partenter->logo}}" src="{{ asset('uploads/partners') }}/{{ $partenter->logo }}"></div>
             @endforeach
         </div>
     </div>
