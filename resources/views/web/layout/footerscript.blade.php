@@ -13,6 +13,8 @@
         nav: false,
         items: 1,
         dots: true,
+        lazyLoad: true,
+        smartSpeed: 900,
         autoplay:true,
     autoplayTimeout:8000 ,
         slidesToShow:1,
