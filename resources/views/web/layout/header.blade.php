@@ -106,50 +106,7 @@
                     </div>
                 </div>
                 <div class="col-lg-6">
-                    <div class="service-slider">
 
-                        @foreach ($homeSliders as $slider)
-                            <div class="ss-single">
-                                <div style="position:relative">
-                                    <img class="slider-img"
-                                        src="{{ asset('uploads/sliders') }}/{{ $slider->image }}" alt="{{ $slider->image }}">
-                                    <div class="slider-tag">
-                                        <h6>
-                                            @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                {!! $slider->title_en !!}
-                                            @else
-                                                {!! $slider->title_ar !!}
-                                            @endif
-                                        </h6>
-                                        <p>
-                                            @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                {!! $slider->text_en !!}
-                                            @else
-                                                {!! $slider->text_ar !!}
-                                            @endif
-                                        </p>
-                                    </div>
-                                    <div class="slider-tag tag2">
-                                        <h6>
-                                            @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                {!! $slider->title_en !!}
-                                            @else
-                                                {!! $slider->title_ar !!}
-                                            @endif
-                                        </h6>
-                                        <p>
-                                            @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                                {!! $slider->text_en !!}
-                                            @else
-                                                {!! $slider->text_ar !!}
-                                            @endif
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        @endforeach
-
-                    </div>
                 </div>
             </div>
         </div>
