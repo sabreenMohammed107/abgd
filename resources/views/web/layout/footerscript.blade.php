@@ -13,8 +13,11 @@
         nav: false,
         items: 1,
         dots: true,
-        autoplay: true,
+        autoplay:true,
+    autoplayTimeout:8000 ,
         slidesToShow:1,
+        mouseDrag: true,
+        touchDrag: false,
     });
 </script>
 
