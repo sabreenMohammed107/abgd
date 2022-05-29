@@ -1,15 +1,11 @@
-<!--====== Javascripts & Jquery ======-->
+<script src="{{ asset('webassets/js/jquery-3.3.1.slim.min.js')}}"></script>
+<script src="{{ asset('webassets/js/bootstrap.min.js')}}"></script>
+	<script src="{{ asset('webassets/js/popper.min.j')}}s"></script>
+	<!--====== Slider ======-->
+	<script src="{{ asset('webassets/js/jquery-2.1.4.min.js')}}"></script>
+	<script src="{{ asset('webassets/js/owl.carousel.min.js')}}"></script>
+        <script src="{{ asset('webassets/js/slick.js')}}"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-<!--====== Slider ======-->
-{{-- <script src="{{ asset('webassets/js/jquery-3.2.1.min.js')}}"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-<script src="{{ asset('webassets/js/bootstrap.min.js')}}"></script> --}}
-
-<script src="{{ asset('webassets/js/jquery-2.1.4.min.js')}}"></script>
-<script src="{{ asset('webassets/js/owl.carousel.min.js')}}"></script>
 <script>
     $('.service-slider').owlCarousel({
         loop: true,
@@ -51,6 +47,26 @@
             }]
         });
     });
+</script>
+
+<script>
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 150;
+
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            } else {
+                reveals[i].classList.remove("active");
+            }
+        }
+    }
+
+    window.addEventListener("scroll", reveal);
 </script>
 <!--====== /Slider ======-->
 @yield('scripts')

@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="login-sec pt-5 pb-5 mb-5">
+<section class="login-sec pt-5 pb-5 mb-5 reveal">
     <div class="container container2">
         <div class="row dir">
             @foreach ($faqs as $faq)
@@ -27,7 +27,7 @@
     </div>
 </section>
 
-<section class="clients-sec">
+<section class="clients-sec reveal">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center">

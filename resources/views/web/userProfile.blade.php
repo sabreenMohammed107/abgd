@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="login-sec pt-5 pb-5 mb-5">
+<section class="login-sec pt-5 pb-5 mb-5 reveal">
     <div class="container">
         <div class="row dir">
             <div class="col-lg-6 col-md-12">
@@ -68,7 +68,10 @@
 
                         </select>
                     </div>
-
+                    <div class="mb-3">
+                        <label class="form-label ">{{ __('links.otherSchools') }}</label>
+                        <textarea class="form-control " rows="4" name="other_schools">{!! $user_parent->other_schools !!} </textarea>
+                    </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.total_cost') }}</label>
                         <input type="number" value="{{$user_parent->total_cost}}"name="total_cost" class="form-control">
@@ -127,7 +130,7 @@
     </div>
 </section>
 
-<section class="clients-sec">
+<section class="clients-sec reveal">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center">

@@ -11,8 +11,27 @@
                     <a class="footer-button" href="{{ LaravelLocalization::localizeUrl('/faq') }}">{{ __('links.faq') }}</a>
                     <a class="footer-button" href=" {{ LaravelLocalization::localizeUrl('/') }}#contact-sec">{{ __('links.contact_us') }}</a>
 
-                    <a class="footer-button" href="#">{{ __('links.privacy_policy') }}</a>
-                    <a class="footer-button" href="#">{{ __('links.term_condation') }}</a>
+                    @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
+                    @if (LaravelLocalization::getCurrentLocale() != 'ar' && $localeCode == 'ar')
+                        <a class="footer-button" rel="alternate" hreflang="{{ $localeCode }}"
+                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+
+                            <!--{{ $properties['native'] }}-->
+
+                            {{ __('links.ar') }}
+                        </a>
+                    @endif
+                    @if (LaravelLocalization::getCurrentLocale() != 'en' && $localeCode == 'en')
+                        <a class="footer-button" rel="alternate" hreflang="{{ $localeCode }}"
+                            href="{{ LaravelLocalization::getLocalizedURL($localeCode, null, [], true) }}">
+
+                            {{ __('links.en') }}
+                        </a>
+                    @endif
+                    <!--|-->
+                @endforeach
+                    {{-- <a class="footer-button" href="#">{{ __('links.privacy_policy') }}</a> --}}
+                    {{-- <a class="footer-button" href="#">{{ __('links.term_condation') }}</a> --}}
                 </div>
             </div>
         </div>
@@ -33,3 +52,5 @@
         </p>
     </div>
 </footer>
+
+<a id="button"></a>

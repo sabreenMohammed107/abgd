@@ -189,7 +189,7 @@ body {
         padding-left: 50px !important;
     }
     .success-sec {
-        margin-top: 300px !important;
+        /* margin-top: 300px !important; */
     }
 }
 
@@ -204,7 +204,7 @@ body {
         margin-top: 200px !important;
     }
     .success-sec {
-        margin-top: 250px !important;
+        /* margin-top: 250px !important; */
     }
     .service-slider .owl-controls {
         left: 20px;
@@ -244,7 +244,7 @@ body {
         margin-bottom: 200px;
     }
     .success-sec {
-        margin-top: 250px !important;
+        /* margin-top: 250px !important; */
     }
     .ss-single .slider-img {
         margin-top: 50px;
@@ -270,7 +270,7 @@ body {
         margin-top: 50px;
     }
     .success-sec {
-        margin-top: 300px !important;
+        margin-top: 250px !important;
     }
     .service-text {
         padding-right: 28%;
@@ -1082,10 +1082,11 @@ select {
     text-align: right !important;
 }
 
-.btn-primary:hover {
+
+/* .btn-primary:hover {
     background-color: #2B759F;
     border-color: #2B759F;
-}
+} */
 
 .btn-rec {
     background-color: #2B759F;
@@ -1107,6 +1108,23 @@ select {
 .btn-more {
     background-color: #0086D1;
     border: solid 2px #fff;
+    padding: 5px 40px;
+    border-radius: 20rem;
+    font-size: 18px;
+}
+
+.btn-rec2:hover {
+    background-color: #0086D1;
+    border: solid 2px #fff;
+    padding: 5px 40px;
+    border-radius: 20rem;
+    font-size: 18px;
+}
+
+.btn-more:hover {
+    background-color: #fff;
+    border: solid 2px #fff;
+    color: #0086D1;
     padding: 5px 40px;
     border-radius: 20rem;
     font-size: 18px;
@@ -1298,3 +1316,68 @@ select {
 
 
 /*//////////// /Responsive //////////////*/
+
+.reveal {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+/* //////////////////////// */
+
+.en #button {
+    right: 30px;
+}
+
+.ar #button {
+    left: 30px;
+}
+
+#button {
+    display: inline-block;
+    background-color: #0d6efd;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    transition: background-color .3s, opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+#button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+}
+
+#button:hover {
+    cursor: pointer;
+    background-color: #333;
+}
+
+#button:active {
+    background-color: #555;
+}
+
+#button.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* /////////////// /Demo Edits 1 ////////////////////// */

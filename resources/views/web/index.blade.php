@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="about-sec" id="about-sec">
+<section class="about-sec reveal" id="about-sec">
     <div class="mt-4">
         <div class="container container2">
             <div class="row dir">
@@ -26,7 +26,7 @@
     </div>
 </section>
 
-<section class="why-us" id="why-us">
+<section class="why-us reveal" id="why-us">
     <div class="container container2">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center">
@@ -76,7 +76,7 @@
     </div>
 </section>
 
-<section class="how-sec" id="how-sec">
+<section class="how-sec reveal" id="how-sec">
     <div class="container container2">
         <div class="row dir">
             <div class="col-lg-6 col-md-12" style="margin:auto 0">
@@ -125,7 +125,7 @@
     </div>
 </section>
 
-<section class="join-sec">
+<section class="join-sec reveal">
     <div class="mt-4">
         <div class="container container2">
             <div class="row">
@@ -151,7 +151,7 @@
     </div>
 </section>
 
-<section class="clients-sec">
+<section class="clients-sec reveal">
     <div class="container">
         <div class="row justify-content-center mb-5 pb-3">
             <div class="col-md-7 heading-section text-center">
@@ -170,7 +170,7 @@
     </div>
 </section>
 
-<section class="contact-sec" id="contact-sec">
+<section class="contact-sec reveal" id="contact-sec">
     <div class="container container2">
         <div class="row dir">
             <div class="col-lg-6 col-md-12">
@@ -214,7 +214,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
-                                <input type="text" class="form-control" name="name"  placeholder="{{ __('links.name') }}">
+                                <input type="text" class="form-control" readonly name="name"  placeholder="{{ __('links.name') }}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
@@ -231,7 +231,7 @@
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
-                                <input type="tel" class="form-control" name="mobile"  placeholder=" {{ __('links.phone') }}">
+                                <input type="tel" class="form-control" required name="mobile"  placeholder=" {{ __('links.phone') }}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
@@ -241,7 +241,7 @@
                         </div>
                         <div class="col-lg-12 col-md-12">
                             <div class="mb-3">
-                                <textarea class="form-control" name="message" rows="9" placeholder="{{ __('links.message') }}"></textarea>
+                                <textarea class="form-control" required name="message" rows="9" placeholder="{{ __('links.message') }}"></textarea>
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">

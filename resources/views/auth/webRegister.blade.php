@@ -55,7 +55,7 @@
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.school') }}</label>
                         <select class="form-select form-control"  multiple name="schools[]" style="height: 150px" aria-label="Default select example" style="background-color:white!important;border:1px solid #ced4da !important">
-                            <option selected>{{ __('links.select_school') }}</option>
+                            <option >{{ __('links.select_school') }}</option>
                             @foreach ($schools as $school)
                             <option value="{{$school->id}}"  >@if (LaravelLocalization::getCurrentLocale() === 'en')
                                 {{ $school->name_en }}
@@ -65,6 +65,10 @@
                             @endforeach
 
                         </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label ">{{ __('links.otherSchools') }}</label>
+                        <textarea class="form-control " name="other_schools">{!! old('other_schools') !!} </textarea>
                     </div>
 
                     <div class="mb-3">

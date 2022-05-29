@@ -118,10 +118,11 @@ class UsersController extends Controller
 
     public function capthcaFormValidate(Request $request)
     {
+
         $validator = Validator::make($request->all(), [
 
             'name' => 'required',
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'regex:/(01)[0-9]{9}/', 'unique:users'],
             'captcha' => 'required|captcha',
 
@@ -140,7 +141,7 @@ class UsersController extends Controller
 
             $user = User::create([
                 'name' => $request->name,
-                'email' => $request->email,
+                // 'email' => $request->email,
                 'phone' => $request->phone,
                 'type' => 0,
                 'password' => Hash::make($request->password),
@@ -152,10 +153,15 @@ class UsersController extends Controller
             $user_parent->child_no = $request->child_no;
             $user_parent->total_cost = $request->total_cost;
             $user_parent->gender = $request->gender;
+            $user_parent->other_schools=$request->other_schools;
 
             $user_parent->save();
-            $user_parent->schools()->attach($request->schools);
+            if(!empty($request->get('schools'))){
+                if($request->get('schools')[0] !=0){
+                    $user_parent->schools()->attach($request->schools);
+                }
 
+            }
             Auth::login($user);
             DB::commit();
             // Enable foreign key checks!
@@ -183,7 +189,7 @@ class UsersController extends Controller
 
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:users,name,'. $user_parent->user_id,
-            'email' => 'required|email|unique:users,email,'. $user_parent->user_id,
+            // 'email' => 'required|email|unique:users,email,'. $user_parent->user_id,
             'phone' => 'required|regex:/(01)[0-9]{9}/|unique:users,phone,' . $user_parent->user_id,
 
             'password' => 'same:confirm-password',
@@ -202,7 +208,7 @@ class UsersController extends Controller
 
         $input =[
             'name'=>$request->get('name'),
-            'email'=>$request->get('email'),
+            // 'email'=>$request->get('email'),
             'phone'=>$request->get('phone'),
         ];
         if(!empty($request->get('password'))){
@@ -222,13 +228,19 @@ class UsersController extends Controller
 'child_no'=>$request->child_no,
 'total_cost'=>$request->total_cost,
 'gender'=>$request->gender,
+'other_schools'=>$request->other_schools,
+
         ];
 
         // $user_parent = User_parent::find($user_parent);
         // dd($user_parent);
-        $user_parent->update($parent);
 
+        $user_parent->update($parent);
+        if(!empty($request->get('schools'))){
+            if($request->get('schools')[0] !=0){
         $user_parent->schools()->sync($request->schools);
+            }
+ }
 
         Auth::login($user);
         DB::commit();

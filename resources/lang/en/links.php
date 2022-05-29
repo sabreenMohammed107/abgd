@@ -19,6 +19,7 @@ return [
  'name_phone'=>'Name Or Phone',
  'login' => 'Login',
  'select_school'=>'Select School',
+ 'otherSchools'=>'Other Schools ',
  'full_name'=>'Full Name',
     'gender'=>'Gender',
     'male'=>'Male',

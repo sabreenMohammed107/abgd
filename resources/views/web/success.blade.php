@@ -2,12 +2,12 @@
 
 
 @section('content')
-<section class="success-sec pt-5">
+<section class="success-sec pt-5 reveal">
     @if(!empty($flash_success))
     <script>
        setTimeout(function() {
            window.location.href = "{{ url('/')}}"
-       }, 3000); // 2 second
+       }, 10000); // 2 second
     </script>
 @endif
     <div class="container">
