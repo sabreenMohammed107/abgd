@@ -2,7 +2,7 @@
 
 return [
     /*----header*/
-'register'=>'التسجيل',
+'register'=>'تسجيل دخول',
     'address' => 'العنوان',
     'phone' => 'الهاتف',
     'mobile' => 'موبايل',
@@ -54,7 +54,7 @@ return [
     'wishlist'=>'المفضلة',
     'track_order'=>'اتبع طلبك',
   'my_order'=>'طلباتى',
-  'my_profile'=>'ملف شخصى',
+  'my_profile'=>'الملف الشخصي',
   'edit_my_profile'=>'تعديل الملف الشخصي',
   'update_message'=>'تم تعديل البيانات بنجاح',
   'help_fqa'=>'أسئله ومساعدات',

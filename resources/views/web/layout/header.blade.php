@@ -104,7 +104,18 @@
                         @endif
                     </p>
                     <div class="hero-btn justify-content-center">
-                        <a href="#how-sec" class="btn btn-primary btn-rec2">{{ __('links.register') }}</a>
+                        @if (Auth::user() && Auth::user()->type == 'user')
+                        <a href="{{ route('user-profile', Auth::user()->id) }}" class="btn btn-primary btn-rec2">{{ __('links.my_profile') }} </a>
+
+                    @else
+
+
+                            <a href="{{ LaravelLocalization::localizeUrl('/user-login') }}" class="btn btn-primary btn-rec2">{{ __('links.register') }}</a>
+
+                    @endif
+
+
+
                         <a href="#about-sec" class="btn btn-primary btn-more">{{ __('links.show_more') }}</a>
                     </div>
                 </div>

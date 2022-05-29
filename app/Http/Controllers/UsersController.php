@@ -79,7 +79,7 @@ class UsersController extends Controller
 
             } else {
                 return redirect()->route('user-login')
-                    ->with('error', 'Email-Address And Password Are Wrong.');
+                ->withErrors('Email-Address And Password Are Wrong.');
             }
 
         } else {
@@ -89,8 +89,9 @@ class UsersController extends Controller
                 return redirect()->intended(url('/'));
 
             } else {
+
                 return redirect()->route('user-login')
-                    ->with('error', 'Email-Address And Password Are Wrong.');
+                ->withErrors('Email-Address And Password Are Wrong.');
             }
         }
 

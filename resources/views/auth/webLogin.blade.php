@@ -33,11 +33,11 @@
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary btn-contact"> {{ __('links.login') }}</button>
                     </div>
-  @if (Route::has('password.request'))
+  {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
-                                @endif
+                                @endif --}}
                 </form>
                 {{-- <a href="{{ LaravelLocalization::localizeUrl('/user-register') }}" class="btn btn-primary btn-rec">{{ __('links.register') }}</a> --}}
 
