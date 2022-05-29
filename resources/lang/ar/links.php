@@ -47,7 +47,7 @@ return [
     'search'=>'بحث',
     'search_text'=>'إبحث فى اكتر من 10.000 منتج',
     'account'=>'الحساب',
-    'signin_up'=>' حساب جديد',
+    'signin_up'=>' ليس لديك حساب ؟ حساب جديد',
     'sign_out'=>'تسجيل خروج ',
     'privacy_policy'=>'سياسه الخصوصيه',
     'term_condation'=>'الشروط والاحكام',

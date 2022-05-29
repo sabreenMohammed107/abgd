@@ -27,11 +27,14 @@
                         <label class="form-label">{{ __('links.password') }}</label>
                         <input type="password" name="password" class="form-control">
                     </div>
-                    <div class="mb-3">
-                        <a href="{{ LaravelLocalization::localizeUrl('/user-register') }}">{{ __('links.signin_up') }}</a>
-                    </div>
+
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary btn-contact"> {{ __('links.login') }}</button>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <a href="{{ LaravelLocalization::localizeUrl('/user-register') }}">{{ __('links.signin_up') }}</a>
                     </div>
   {{-- @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
