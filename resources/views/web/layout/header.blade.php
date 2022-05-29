@@ -20,7 +20,7 @@
                             {{ __('links.register') }}
                         </a>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/faq') }}"> {{ __('links.faq') }}</a>
+                        <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/faq') }}#first-sec"> {{ __('links.faq') }}</a>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/') }}#contact-sec"> {{ __('links.contact_us') }}</a>
                     </li>
