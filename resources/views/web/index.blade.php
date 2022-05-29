@@ -47,7 +47,7 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="why-block">
                     <div class="content">
-                        <a href="loan_request.html" target="_blank">
+                        <a href="#" rel="noreferrer" target="_blank">
                             <div class="content-overlay"></div>
                             <img class="content-image why-img" alt="{{ $whyRow->image }}" src="{{ asset('uploads/why_us') }}/{{ $whyRow->image }}">
                             <div class="content-details fadeIn-bottom">
@@ -200,10 +200,10 @@
                         <span><i class="fa-regular fa-envelope"></i></span> <b>{{ $companyContact->email }}</b>
                     </div>
                     <div class="rounded-social-buttons mt-1">
-                        <a class="social-button facebook" href="{{ $companyContact->facebook }}" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                        <a class="social-button twitter" href="{{ $companyContact->twitter }}" target="_blank"><i class="fab fa-twitter"></i></a>
-                        <a class="social-button linkedin" href="{{ $companyContact->linkedin }}" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-button instagram" href="{{ $companyContact->instagram }}" target="_blank"><i class="fab fa-instagram"></i></a>
+                        <a class="social-button facebook" href="{{ $companyContact->facebook }}" rel="noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a class="social-button twitter" href="{{ $companyContact->twitter }}" rel="noreferrer" target="_blank"><i class="fab fa-twitter"></i></a>
+                        <a class="social-button linkedin" href="{{ $companyContact->linkedin }}" rel="noreferrer" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a class="social-button instagram" href="{{ $companyContact->instagram }}" rel="noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
