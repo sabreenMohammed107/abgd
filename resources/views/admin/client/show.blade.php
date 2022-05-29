@@ -1,6 +1,6 @@
 @extends('layout.web')
 
-@section('title', ' العملاء')
+@section('title', '  تسجيلات القروض')
 
 @section('content')
 
@@ -31,7 +31,7 @@
                 </div>
             </div>
             <div class="mb-3">
-                <label class="form-label">{{ __('links.phone') }}</label>
+                <label class="form-label">{{ __('links.mobile') }}</label>
                 <input type="tel" id="phone" readonly  name="phone" value="{{$user_parent->user->phone ?? ''}}" class="form-control @error('phone') is-invalid @enderror">
                 @error('phone')
                 <span class="invalid-feedback" role="alert">
@@ -72,7 +72,7 @@
                 </span>
             @enderror
             </div>
-            <div class="mb-3">
+            {{-- <div class="mb-3">
                 <label class="form-label">{{ __('links.email') }}</label>
                 <input type="text" value="{{$user_parent->user->email ?? ''}}" readonly name="email" class="form-control @error('email') is-invalid @enderror">
                 @error('email')
@@ -80,7 +80,7 @@
                     <strong>{{ $message }}</strong>
                 </span>
             @enderror
-            </div>
+            </div> --}}
 
             <div class="col-xs-6 col-sm-6 col-md-6 text-center">
 

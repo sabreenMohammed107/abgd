@@ -14,6 +14,7 @@ class User_parent extends Model
         'gender',
         'child_no',
         'total_cost',
+        'other_schools',
     ];
     public function schools()
     {

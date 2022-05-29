@@ -191,7 +191,7 @@
                         @endif</b>
                     </div>
                     <div>
-                        <span><i class="fa-solid fa-mobile-screen-button"></i></span> <b> {!! $companyContact->phones !!}</b>
+                        <span><i class="fa-solid fa-mobile-screen-button"></i></span> <b> {{ strip_tags($companyContact->phones) }}</b>
                     </div>
                     <div>
                         <span><i class="fa-brands fa-whatsapp"></i></span> <b>{{ $companyContact->whatsapp }}</b>

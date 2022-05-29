@@ -4,7 +4,7 @@
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="user-panel" style="background: #fff">
-          <img src="{{ asset('adminassets/dist/img/logo.png')}}" style="width:80%" alt="User Image" />
+          <img src="{{ asset('webassets/imgs/logo.webp') }}" style="width:80%" alt="User Image" />
 
       </div>
 
@@ -76,7 +76,7 @@
         <li class="treeview">
             <a href="">
               <i class="fa fa-edit"></i>
-              <span> عملاء الموقع</span>
+              <span> تسجيلات القروض</span>
               <i class="fa fa-angle-left pull-right"></i>
             </a>
             <ul class="treeview-menu">

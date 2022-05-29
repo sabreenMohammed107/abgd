@@ -1,13 +1,13 @@
 @extends('layout.web')
 
-@section('title', ' العملاء')
+@section('title', '  تسجيلات القروض')
 
 @section('content')
 
 
 <div class="box">
     <div class="box-header">
-      <h3 class="box-title"> العملاء</h3>
+      <h3 class="box-title">  تسجيلات القروض</h3>
 
     </div><!-- /.box-header -->
     <div class="box-body">
@@ -22,6 +22,7 @@
    <th>الاسم</th>
    <th>البريد الإلكترونى</th>
    <th>الموبايل</th>
+   <th>تاريخ التسجيل</th>
    <th width="280px">اجراءات</th>
  </tr>
                                    </thead>
@@ -33,6 +34,7 @@
     <td>{{ $row->user->name ?? ''}}</td>
     <td>{{ $row->user->email ?? '' }}</td>
     <td>{{ $row->user->phone ?? ''}}</td>
+    <td>{{date('d-m-Y', strtotime($row->created_at))}}</td>
     <td>
         <div class="btn-group">
 
