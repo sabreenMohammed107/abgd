@@ -9,7 +9,7 @@ return [
   'email' => 'Email',
   'en' => 'English',
   'ar' => 'عربى',
-  'how_register'=>'How Register',
+  'how_register'=>'Contract Steps',
   'joinNow'=>'Join Us Now',
   'wait'=>'Moments and you will be taken back to the home page
  ...  ',
@@ -37,7 +37,7 @@ return [
   'home' => 'Home',
   'about_us' => 'About Us ',
   'products'=>'Products',
-  'partenters'=>'Our Partenters',
+  'partenters'=>'Our Parteners',
   'gallery' => 'Gallery',
   'blog' => 'Blog',
   'blogs' => 'Blogs',

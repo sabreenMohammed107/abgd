@@ -15,13 +15,16 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/') }}#why-us"> {{ __('links.why_us') }} </a>
-                    <li class="nav-item">
+                    </li>
+                        <li class="nav-item">
                         <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/') }}#how-sec">
-                            {{ __('links.register') }}
+                            {{ __('links.how_register') }}
                         </a>
-                    <li class="nav-item">
+                    </li>
+                    {{-- <li class="nav-item">
                         <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/faq') }}#first-sec"> {{ __('links.faq') }}</a>
-                    <li class="nav-item">
+                    --}}
+                        <li class="nav-item">
                         <a class="nav-link" href="{{ LaravelLocalization::localizeUrl('/') }}#contact-sec"> {{ __('links.contact_us') }}</a>
                     </li>
                     <li class="nav-item">
