@@ -188,4 +188,13 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'consult_specialist'=>'Consult a specialist',
 'general_tips'=>'General Tips',
 
+
+// validate messages
+'name_required'=>'Name Required',
+'phone_unique'=>'Mobile already exist',
+'phone_required'=>'Mobile Required',
+'phone_regex'=>'Invalid Mobile Number',
+'captcha_required'=>' Captcha Required',
+'password_same'=>'Password Error',
+
 ];

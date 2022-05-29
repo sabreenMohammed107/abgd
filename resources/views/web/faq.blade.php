@@ -2,7 +2,7 @@
 
 
 @section('content')
-<section class="login-sec pt-5 pb-5 mb-5 reveal">
+<section class="login-sec pt-5 pb-5 mb-5 reveal" id="first-sec">
     <div class="container container2">
         <div class="row dir">
             @foreach ($faqs as $faq)

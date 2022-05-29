@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Lang as Lang;
 use Validator;
 use Hash;
 use Illuminate\Support\Arr;
+
 class UsersController extends Controller
 {
     //
@@ -125,6 +126,16 @@ class UsersController extends Controller
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'regex:/(01)[0-9]{9}/', 'unique:users'],
             'captcha' => 'required|captcha',
+            'password' => 'same:confirm-password',
+
+        ],[
+            'name.required' => Lang::get('links.name_required'),
+            'phone.unique' => Lang::get('links.phone_unique'),
+            'phone.required' => Lang::get('links.phone_required'),
+            'phone.regex' => Lang::get('links.phone_regex'),
+            'captcha.required' => Lang::get('links.captcha_required'),
+            'password.same' => Lang::get('links.password_same'),
+
 
         ]);
 
@@ -194,7 +205,18 @@ class UsersController extends Controller
 
             'password' => 'same:confirm-password',
             'captcha' => 'required|captcha',
-        ]);
+        ],
+        [
+            'name.required' => Lang::get('links.name_required'),
+            'phone.unique' => Lang::get('links.phone_unique'),
+            'phone.required' => Lang::get('links.phone_required'),
+            'phone.regex' => Lang::get('links.phone_regex'),
+            'password.same' => Lang::get('links.password_same'),
+            'captcha.required' => Lang::get('links.captcha_required'),
+
+
+        ]
+    );
 
         if ($validator->fails()) {
             return redirect()->back()->withInput()

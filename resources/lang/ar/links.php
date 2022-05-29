@@ -196,4 +196,12 @@ return [
 'farming_tips'=>'نصائح زراعية',
 'general_tips'=>'نصائح عامة',
 'consult_specialist'=>'استشر مختص',
+
+// validate messages
+'name_required'=>'حقل الاسم مطلوب',
+'phone_unique'=>'حقل الهاتف موجود بالفعل',
+'phone_required'=>'حقل الهاتف مطلوب',
+'phone_regex'=>'حقل الهاتف غير صحيح',
+'captcha_required'=>' حقل رمز التحقق مطلوب',
+'password_same'=>'خطأ فى كلمة المرور',
 ];

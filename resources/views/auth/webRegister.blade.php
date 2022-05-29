@@ -24,7 +24,7 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.full_name') }}</label>
-                        <input type="text" value="{{old('full_name')}}" name="full_name" class="form-control">
+                        <input type="text" value="{{old('full_name')}}" name="full_name" class="form-control" autofocus >
                     </div>
                     <div>
                         <label class="form-check-label mb-2" for="exampleCheck4">{{ __('links.gender') }}</label>
