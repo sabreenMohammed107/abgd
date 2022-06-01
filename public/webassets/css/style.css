@@ -1412,3 +1412,9 @@ select {
     height: 150px;
     overflow-y: scroll;
 }
+
+@media (min-width: 500px) and (max-width: 549px) {
+    .login-sec {
+        margin-top: 340px;
+    }
+}
