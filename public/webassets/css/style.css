@@ -168,6 +168,10 @@ body {
 }
 
 @media (min-width:300px) and (max-width:399px) {
+    .intro-section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
     .ss-single .slider-img {
         width: 230px !important;
         height: 230px;
@@ -194,6 +198,10 @@ body {
 }
 
 @media (min-width:400px) and (max-width:499px) {
+    .intro-section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
     .ss-single .slider-img {
         width: 300px !important;
         height: 300px;
@@ -236,6 +244,10 @@ body {
 }
 
 @media (min-width:500px) and (max-width:699px) {
+    .intro-section {
+        padding-right: 10px;
+        padding-left: 10px;
+    }
     .service-slider .owl-controls {
         left: 20px;
         top: 0;
