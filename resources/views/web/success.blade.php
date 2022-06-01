@@ -4,11 +4,11 @@
 @section('content')
 <section class="success-sec pt-5 reveal">
     @if(!empty($flash_success))
-    <script>
+    {{-- <script>
        setTimeout(function() {
            window.location.href = "{{ url('/')}}"
        }, 10000); // 2 second
-    </script>
+    </script> --}}
 @endif
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
