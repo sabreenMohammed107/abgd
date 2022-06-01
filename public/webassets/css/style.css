@@ -1405,3 +1405,10 @@ select {
 
 
 /* /////////////// /Demo Edits 1 ////////////////////// */
+
+.select-multiple {
+    background-color: #fff !important;
+    border: 1px solid #ced4da !important;
+    height: 150px;
+    overflow-y: scroll;
+}
