@@ -100,7 +100,7 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.confirm_password') }}</label>
-                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control" name="confirm-password" required autocomplete="new-password">
                     </div>
                     <div class="form-group mt-4 mb-4">
                         <div class="captcha">
