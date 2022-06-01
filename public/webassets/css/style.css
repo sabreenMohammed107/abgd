@@ -1315,7 +1315,11 @@ select {
 
 /* Small Devices, Tablets */
 
-@media (min-width: 320px) and (max-width:991px) {}
+@media (min-width: 320px) and (max-width:991px) {
+    .footer-links .footer-button {
+        display: block;
+    }
+}
 
 
 /* Medium Devices, Desktops */
