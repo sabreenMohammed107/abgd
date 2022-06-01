@@ -1319,6 +1319,12 @@ select {
     .footer-links .footer-button {
         display: block;
     }
+    .en .footer-links .footer-button {
+        text-align: left;
+    }
+    .ar .footer-links .footer-button {
+        text-align: right;
+    }
 }
 
 
