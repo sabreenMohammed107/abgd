@@ -1208,6 +1208,9 @@ select {
     .navbar .nav-link {
         color: #007FC6;
     }
+    .success-sec {
+        margin-top: 350px;
+    }
 }
 
 .content {
