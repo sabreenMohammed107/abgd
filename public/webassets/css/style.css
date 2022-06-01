@@ -1275,6 +1275,12 @@ select {
     .about-sec {
         margin-top: 200px;
     }
+    .ar .how-sec .how-text {
+        padding-left: 0px;
+    }
+    .en .how-sec .how-text {
+        padding-right: 0px;
+    }
 }
 
 @media (min-width: 500px) and (max-width: 899px) {
@@ -1285,6 +1291,12 @@ select {
     }
     .about-sec {
         margin-top: 300px;
+    }
+    .ar .how-sec .how-text {
+        padding-left: 0px;
+    }
+    .en .how-sec .how-text {
+        padding-right: 0px;
     }
 }
 
