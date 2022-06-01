@@ -94,34 +94,90 @@
             </div>
             <div class="col-lg-6 col-md-12">
                 <div class="row">
-                    @foreach ($howRegister as $index=>$row )
-
-
                     <div class="col-lg-6 col-md-12">
+                        @isset($howRegister[0])
                         <div class="how-block">
-                            <span class="how-span how-1"> {{ $row->order }}</span>
+                            <span class="how-span how-1">{{ $howRegister[0]->order }}</span>
                             <h4>
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $row->title_en }}
+                                {{ $howRegister[0]->title_en }}
                             @else
-                                {{ $row->title_ar }}
+                                {{ $howRegister[0]->title_ar }}
                             @endif
                             </h4>
                             <p>
                                 @if (LaravelLocalization::getCurrentLocale() === 'en')
-                                {{ $row->text_en }}
+                                {{ $howRegister[0]->text_en }}
                             @else
-                                {{ $row->text_ar }}
-                            @endif
-                            </p>
+                                {{ $howRegister[0]->text_ar }}
+                            @endif </p>
                         </div>
+                        @endisset
                     </div>
-
-                    @endforeach
-
+                    <div class="col-lg-6 col-md-12 mt-4">
+                        @isset($howRegister[1])
+                        <div class="how-block">
+                            <span class="how-span how-2">{{ $howRegister[1]->order }}</span>
+                            <h4>
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $howRegister[1]->title_en }}
+                            @else
+                                {{ $howRegister[1]->title_ar }}
+                            @endif
+                            </h4>
+                            <p>
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $howRegister[1]->text_en }}
+                            @else
+                                {{ $howRegister[1]->text_ar }}
+                            @endif </p>
+                        </div>
+                        @endisset
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        @isset($howRegister[2])
+                        <div class="how-block">
+                            <span class="how-span how-3"> {{ $howRegister[2]->order }}</span>
+                            <h4>
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $howRegister[2]->title_en }}
+                            @else
+                                {{ $howRegister[2]->title_ar }}
+                            @endif
+                            </h4>
+                            <p>
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $howRegister[2]->text_en }}
+                            @else
+                                {{ $howRegister[2]->text_ar }}
+                            @endif</p>
+                        </div>
+                        @endisset
+                    </div>
+                    <div class="col-lg-6 col-md-12 mt-4">
+                        @isset($howRegister[3])
+                        <div class="how-block">
+                            <span class="how-span how-3"> {{ $howRegister[3]->order }}</span>
+                            <h4>
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $howRegister[3]->title_en }}
+                            @else
+                                {{ $howRegister[3]->title_ar }}
+                            @endif
+                            </h4>
+                            <p>
+                                @if (LaravelLocalization::getCurrentLocale() === 'en')
+                                {{ $howRegister[3]->text_en }}
+                            @else
+                                {{ $howRegister[3]->text_ar }}
+                            @endif </p>
+                        </div>
+                        @endisset
+                    </div>
                 </div>
             </div>
         </div>
+
     </div>
 </section>
 
