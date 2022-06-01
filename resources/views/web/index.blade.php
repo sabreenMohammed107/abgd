@@ -223,7 +223,7 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
-                                <input type="text" class="form-control" readonly name="name"  placeholder="{{ __('links.name') }}">
+                                <input type="text" class="form-control"  name="name"  placeholder="{{ __('links.name') }}">
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
