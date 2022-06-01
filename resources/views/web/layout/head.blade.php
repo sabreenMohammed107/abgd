@@ -24,7 +24,7 @@
         <meta name="author" content="sabreen mohammed & senior steps">
 
 	<!-- Favicon -->
-	<link href="{{ asset('webassets/imgs/logo.webp')}}" rel="shortcut icon" sizes="196x196" />
+	<link href="{{ asset('webassets/imgs/logo2.jpeg')}}" rel="shortcut icon" sizes="196x196" />
 	<!-- Fontawesome -->
 	<link href="{{ asset('webassets/fonts/fontawesome-free-6.0.0-web/css/all.css')}}" rel="stylesheet" type="text/css">
 	<!-- Bootstrap -->
