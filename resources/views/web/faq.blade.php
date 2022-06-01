@@ -6,13 +6,13 @@
     <div class="container container2">
         <div class="row dir">
             @foreach ($faqs as $faq)
-            <div class="col-lg-12 col-md-12">
+            <div class="col-lg-12 col-md-12 pb-4">
                 <h2>@if (LaravelLocalization::getCurrentLocale() === 'en')
                     {{ $faq->question_en }}
                 @else
                     {{ $faq->question_ar }}
                 @endif</h2>
-                <p style="color:#808080;font-size:18px">
+                <p class="faq-text">
                     @if (LaravelLocalization::getCurrentLocale() === 'en')
                     {{ $faq->answer_en }}
                 @else

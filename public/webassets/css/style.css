@@ -1418,3 +1418,9 @@ select {
         margin-top: 340px;
     }
 }
+
+.faq-text {
+    color: #808080;
+    font-size: 18px;
+    text-align: justify;
+}
