@@ -69,7 +69,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-sm-6">
+                            {{-- <div class="col-sm-6">
                                 <div class="form-group">
                                     <label for="">الترتيب</label>
                                     <input type="number"
@@ -89,7 +89,7 @@
                                     </div>
 
                             </div>
-                            </div>
+                            </div> --}}
 
 
                 <div class="col-xs-6 col-sm-6 col-md-6 text-center">
