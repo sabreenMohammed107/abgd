@@ -47,11 +47,31 @@
             <div class="col-lg-3 col-md-6 col-sm-6 col-12">
                 <div class="why-block">
                     <div class="content">
-                        <a href="#" rel="noreferrer" target="_blank">
+                        @if (Auth::user() && Auth::user()->type == 'user')
+                        <a href="{{ route('user-profile', Auth::user()->id) }}">
+
+                    @else
+
+
+                            <a href="{{ LaravelLocalization::localizeUrl('/user-login') }}" >
+
+                    @endif
+
                             <div class="content-overlay"></div>
                             <img class="content-image why-img" alt="{{ $whyRow->image }}" src="{{ asset('uploads/why_us') }}/{{ $whyRow->image }}">
                             <div class="content-details fadeIn-bottom">
-                                <b class="text-white">Join Us	<i class="fa-solid fa-link"></i> </b>
+                                <b class="text-white">
+                                    @if (Auth::user() && Auth::user()->type == 'user')
+                                    {{ __('links.my_profile') }}
+
+                                @else
+
+
+                                   {{ __('links.joinNow') }}
+
+                                @endif
+
+                                    <i class="fa-solid fa-link"></i> </b>
                             </div>
                         </a>
                     </div>
