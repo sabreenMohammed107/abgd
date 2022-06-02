@@ -8,7 +8,7 @@
 <div class="box">
     <div class="box-header">
       <h3 class="box-title">كيفية التسجيل</h3>
-      <a href="{{ route('how-register.create') }}" class="btn btn-info btn-lg pull-right"> اضافة </a>
+      {{-- <a href="{{ route('how-register.create') }}" class="btn btn-info btn-lg pull-right"> اضافة </a> --}}
 
     </div><!-- /.box-header -->
     <div class="box-body">
@@ -45,10 +45,10 @@
                                                 <p class=" fa fa-cogs"></p>
                                             </a>
 
-                                            <a href="#del{{ $row->id }}" data-toggle="modal"
+                                            {{-- <a href="#del{{ $row->id }}" data-toggle="modal"
                                                 data-target="#del{{ $row->id }}">
                                                 <p class="fa  fa-times"></p>
-                                            </a>
+                                            </a> --}}
 
                                         </div>
                                     </td>
