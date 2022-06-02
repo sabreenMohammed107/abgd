@@ -119,7 +119,7 @@
                     @enderror
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary btn-contact">{{ __('links.login') }}</button>
+                        <button type="submit" class="btn btn-primary btn-contact">{{ __('links.register') }}</button>
                     </div>
                 </form>
             </div>
