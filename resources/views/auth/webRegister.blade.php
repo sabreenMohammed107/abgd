@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row dir">
             <div class="col-lg-6 col-md-12">
-                <h2>{{ __('links.signin_up') }}</h2>
+                <h2>{{ __('links.signin_up2') }}</h2>
 
                 @if(count($errors) > 0 )
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
