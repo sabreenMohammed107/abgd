@@ -26,7 +26,7 @@ class UsersController extends Controller
 
         session()->flash('success', Lang::get('links.register_message'));
 
-        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.register_message'));
+        return view('web.success')->with('flash_success', Lang::get('links.register_message'));
     }
 
     public function successlogin()
@@ -34,7 +34,7 @@ class UsersController extends Controller
 
         session()->flash('success', Lang::get('links.controller_message'));
 
-        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.controller_message'));
+        return view('web.success')->with('flash_success', Lang::get('links.controller_message'));
     }
 
     public function successprofile()
@@ -42,7 +42,7 @@ class UsersController extends Controller
 
         session()->flash('success', Lang::get('links.update_message'));
 
-        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.update_message'));
+        return view('web.success')->with('flash_success', Lang::get('links.update_message'));
     }
 
 
