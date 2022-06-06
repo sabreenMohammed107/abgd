@@ -24,7 +24,12 @@
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.full_name') }}</label>
-                        <input type="text" value="{{old('full_name')}}" name="full_name" class="form-control" autofocus >
+                        <input type="text" value="{{old('full_name')}}" name="full_name" class="form-control  @error('full_name') is-invalid @enderror" autofocus>
+                        @error('full_name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
                     <div>
                         <label class="form-check-label mb-2" for="exampleCheck4">{{ __('links.gender') }}</label>
@@ -50,7 +55,12 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.childNo') }}</label>
-                        <input type="number" name="child_no" value="{{old('child_no')}}" class="form-control">
+                        <input type="number" id="inp" name="child_no" min="1" value="{{old('child_no')}}" class="form-control @error('child_no') is-invalid @enderror">
+                        @error('child_no')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.school') }}</label>
@@ -73,7 +83,12 @@
 
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.total_cost') }}</label>
-                        <input type="number" value="{{old('total_cost')}}" name="total_cost" class="form-control">
+                        <input type="number" value="{{old('total_cost')}}" name="total_cost" class="form-control @error('total_cost') is-invalid @enderror">
+                        @error('total_cost')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.name') }}</label>
@@ -96,11 +111,11 @@
 
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.password') }}</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.confirm_password') }}</label>
-                        <input id="password-confirm" type="password" class="form-control" name="confirm-password" required autocomplete="new-password">
+                        <input id="password-confirm" type="password" class="form-control" name="confirm-password"  autocomplete="new-password">
                     </div>
                     <div class="form-group mt-4 mb-4">
                         <div class="captcha">
@@ -158,5 +173,10 @@
             }
         });
     });
+    document.getElementById("inp").addEventListener("change", function() {
+  let v = parseInt(this.value);
+  if (v < 1) this.value = 1;
+  if (v > 50) this.value = 50;
+});
 </script>
 @endsection

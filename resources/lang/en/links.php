@@ -5,7 +5,7 @@ return [
   'register'=>'Register',
   'address' => 'Address',
   'phone' => 'Phone',
-  'mobile' => 'Mobile',
+  'mobile' => 'Mobile Number',
   'email' => 'Email',
   'en' => 'English',
   'ar' => 'عربى',
@@ -16,7 +16,7 @@ return [
  'register_message'=>'Successfully Registered',
  'welcome'=>'Welcome',
  'password'=>'Password',
- 'name_phone'=>'Name Or Phone',
+ 'name_phone'=>'UserName/Mobile Number ',
  'login' => 'Login',
  'select_school'=>'Select School',
  'otherSchools'=>'Other Schools ',
@@ -24,7 +24,7 @@ return [
     'gender'=>'Gender',
     'male'=>'Male',
     'female'=>'Female',
-    'childNo'=>'Child Number',
+    'childNo'=>'Children’s count ',
     'school'=>'School',
     'total_cost'=>'Total  Fees /LE',
     'confirm_password'=>'Confirm Password',
@@ -191,11 +191,22 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 
 
 // validate messages
+'userMobileLgoin'=>'User name/Mobile number is required ',
 'name_required'=>'Name Required',
-'phone_unique'=>'Mobile already exist',
-'phone_required'=>'Mobile Required',
+'name_unique'=>'Name already exist',
+'phone_unique'=>'Mobile Number already exist',
+'phone_required'=>'Mobile Number Required',
 'phone_regex'=>'Invalid Mobile Number',
 'captcha_required'=>' Captcha Required',
-'password_same'=>'Password Error',
-
+'password_same'=>'Password/Confirm password do not match',
+'passwordLogin'=>'Password Required',
+'password_min'=>'Password less than 6',
+'password_max'=>'password more than 20',
+'invalid_msg'=>'Invalid User Name / Password',
+'fullname_required'=>'Full Name Required',
+'fees_required'=>'Total Fees Required',
+'childNo_required'=>'Children Count Required',
+'captcha_captcha'=>'Incorrect Captcha',
 ];
+
+

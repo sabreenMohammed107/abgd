@@ -46,8 +46,11 @@ class UsersController extends Controller
 
     public function username()
     {
-        $identifier = request()->get('user_identifier');
 
+        $identifier = request()->get('user_identifier');
+        $vali=[
+            'identifier'=>$identifier,
+        ];
         // if(filter_var($identifier, FILTER_VALIDATE_EMAIL)){
         //     return 'email';
         // }
@@ -55,6 +58,8 @@ class UsersController extends Controller
         // return 'phone';
 
         if (is_numeric($identifier)) {
+
+
 
             return 0;
         }
@@ -68,21 +73,48 @@ class UsersController extends Controller
 
         $this->validate($request, [
             'user_identifier' => 'required',
-            'password' => 'required',
+            'password' => 'required|min:6|max:20',
+        ],[
+            'user_identifier.required' => Lang::get('links.userMobileLgoin'),
+            'password.required' =>  Lang::get('links.passwordLogin'),
+            'password.min' => Lang::get('links.password_min'),
+            'password.max' => Lang::get('links.password_max'),
+
+
         ]);
 
+
         if ($this->username() == 0) {
+
 
             if (auth()->attempt(array('phone' => $input['user_identifier'], 'password' => $input['password'], 'type' => 'user'))) {
 
                 return redirect()->intended(url('/'));
 
             } else {
-                return redirect()->route('user-login')
-                ->withErrors('Email-Address And Password Are Wrong.');
+                // return redirect()->route('user-login')
+                // ->withErrors('Email-Address And Password Are Wrong.');
+  $vali=[
+                'user_identifier'=>$input['user_identifier'],
+            ];
+            $validatorr = Validator::make( $vali, [
+
+                'user_identifier' => 'regex:/(01)[0-9]{9}/',
+
+            ],[
+
+                'user_identifier.regex' => Lang::get('links.phone_regex'),
+
+
+
+            ]);
+                      return redirect()->back()->withInput()
+                    ->withErrors($validatorr->messages());
+
             }
 
-        } else {
+        }
+        else {
 
             if (auth()->attempt(array('name' => $input['user_identifier'], 'password' => $input['password'], 'type' => 'user'))) {
 
@@ -91,7 +123,8 @@ class UsersController extends Controller
             } else {
 
                 return redirect()->route('user-login')
-                ->withErrors('Email-Address And Password Are Wrong.');
+                ->withErrors( Lang::get('links.invalid_msg'));
+
             }
         }
 
@@ -123,19 +156,29 @@ class UsersController extends Controller
 
         $validator = Validator::make($request->all(), [
 
-            'name' => 'required',
+            'name' => ['required','unique:users'],
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'regex:/(01)[0-9]{9}/', 'unique:users'],
             'captcha' => 'required|captcha',
-            'password' => 'same:confirm-password',
+            'password' => 'same:confirm-password|min:6|max:20',
+            'full_name' => 'required',
+            'child_no' => 'required',
+            'total_cost' => 'required',
 
         ],[
             'name.required' => Lang::get('links.name_required'),
+            'name.unique' => Lang::get('links.name_unique'),
             'phone.unique' => Lang::get('links.phone_unique'),
             'phone.required' => Lang::get('links.phone_required'),
             'phone.regex' => Lang::get('links.phone_regex'),
             'captcha.required' => Lang::get('links.captcha_required'),
-            'password.same' => Lang::get('links.password_same'),
+            'captcha.captcha' => Lang::get('links.captcha_captcha'),
+            'password.min' => Lang::get('links.password_min'),
+            'password.max' => Lang::get('links.password_max'),
+            'full_name.required' => Lang::get('links.fullname_required'),
+            'total_cost.required' => Lang::get('links.fees_required'),
+            'child_no.required' => Lang::get('links.childNo_required'),
+
 
 
         ]);

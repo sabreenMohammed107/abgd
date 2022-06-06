@@ -4,11 +4,13 @@
 @section('content')
 <section class="success-sec pt-5 reveal">
     @if(!empty($flash_success))
-    {{-- <script>
+    <script>
+
        setTimeout(function() {
            window.location.href = "{{ url('/')}}"
        }, 10000); // 2 second
-    </script> --}}
+       document.getElementById("next").focus();
+    </script>
 @endif
     <div class="container">
         <div class="row justify-content-center mb-5 pb-5">
@@ -16,9 +18,17 @@
                 @if(!empty($flash_success))
                 <h2>{{$flash_success}}</h2>
                 @endif
+
                 <h6>
-                    {{ __('links.wait') }}
-                </h6>
+                     {{__('links.wait')}}
+                     <a href="{{ LaravelLocalization::localizeUrl('/') }}" class="btn btn-primary btn-rec2" id="next" ><i class="fa-solid fa-arrow-pointer"></i>
+                     </a>
+                    </h6>
+
+            <script>
+
+                document.getElementById("next").focus();
+             </script>
             </div>
         </div>
         <div class="row justify-content-center">

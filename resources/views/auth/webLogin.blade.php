@@ -9,7 +9,18 @@
                 <h2>
                     {{ __('links.login') }}
                 </h2>
-
+                @if(count($errors) > 0 )
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                  <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <ul class="p-0 m-0" style="list-style: none;">
+                    @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                    @endforeach
+                  </ul>
+                </div>
+                @endif
                 <form class="pt-5" action="{{ LaravelLocalization::localizeUrl('/save-user') }}" method="post">
                     @csrf
                     <div class="mb-3">
@@ -25,7 +36,13 @@
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.password') }}</label>
-                        <input type="password" name="password" class="form-control">
+                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
 
                     <div class="mb-3">
