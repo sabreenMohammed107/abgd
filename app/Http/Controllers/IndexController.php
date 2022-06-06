@@ -24,12 +24,22 @@ class IndexController extends Controller
 
         return view($this->viewName . 'index', compact('whyRows','howRegister','partenters','senderTypes'));
     }
+    public function success()
+    {
+
+        session()->flash('success', Lang::get('links.controller_message'));
+
+        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.controller_message'));
+    }
+
 
     public function sendMessage(Request $request){
         Message::create($request->except('_token'));
-        session()->flash('success', Lang::get('links.controller_message'));
-        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.controller_message'));
+        // session()->flash('success', Lang::get('links.controller_message'));
+
+        // return view($this->viewName . 'success')->with('flash_success', Lang::get('links.controller_message'));
         // return redirect()->back()->with('flash_success', Lang::get('links.controller_message'));
+        return \Redirect::route('success')->with('message', 'State saved correctly!!!');
     }
 
     public function faq(){

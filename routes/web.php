@@ -38,9 +38,12 @@ Route::get('/', [IndexController::class,'index']);
 Route::post('/contact-message', [IndexController::class,'sendMessage']);
 
 Route::get('/faq', [IndexController::class,'faq']);
-
+Route::get('/success', [IndexController::class,'success'])->name('success');
 Route::get('/user-login', [UsersController::class,'login'])->name('user-login');
 Route::post('/save-user', [UsersController::class,'saveLogin'])->name('save-user');
+Route::get('/success-register', [UsersController::class,'successregister'])->name('success-register');
+Route::get('/success-login', [UsersController::class,'successlogin'])->name('success-login');
+Route::get('/success-profile', [UsersController::class,'successprofile'])->name('success-profile');
 Route::get('/user-register', [UsersController::class,'register']);
 Route::post('/captcha-validation', [UsersController::class, 'capthcaFormValidate']);
 Route::get('/reload-captcha', [UsersController::class, 'reloadCaptcha']);

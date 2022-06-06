@@ -20,6 +20,34 @@ class UsersController extends Controller
 
     use AuthenticatesUsers;
     //
+
+    public function successregister()
+    {
+
+        session()->flash('success', Lang::get('links.register_message'));
+
+        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.register_message'));
+    }
+
+    public function successlogin()
+    {
+
+        session()->flash('success', Lang::get('links.controller_message'));
+
+        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.controller_message'));
+    }
+
+    public function successprofile()
+    {
+
+        session()->flash('success', Lang::get('links.update_message'));
+
+        return view($this->viewName . 'success')->with('flash_success', Lang::get('links.update_message'));
+    }
+
+
+
+
     public function login()
     {
         $partenters = Partner::all();
@@ -215,8 +243,9 @@ class UsersController extends Controller
             DB::commit();
             // Enable foreign key checks!
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-            session()->flash('success', Lang::get('links.register_message'));
-            return view('web.success')->with('flash_success', Lang::get('links.register_message'));
+            // session()->flash('success', Lang::get('links.register_message'));
+            // return view('web.success')->with('flash_success', Lang::get('links.register_message'));
+            return \Redirect::route('success-register')->with('message', 'State saved correctly!!!');
 
         } catch (\Throwable$e) {
             // throw $th;
@@ -313,8 +342,11 @@ class UsersController extends Controller
             DB::commit();
             // Enable foreign key checks!
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-            session()->flash('success', Lang::get('links.update_message'));
-            return view('web.success')->with('flash_success', Lang::get('links.update_message'));
+            // session()->flash('success', Lang::get('links.update_message'));
+
+            // return view('web.success')->with('flash_success', Lang::get('links.update_message'));
+            return \Redirect::route('success-profile')->with('message', 'State saved correctly!!!');
+
 
         } catch (\Throwable$e) {
             // throw $th;
