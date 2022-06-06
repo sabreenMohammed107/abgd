@@ -110,7 +110,7 @@
                     @else
 
 
-                            <a href="{{ LaravelLocalization::localizeUrl('/user-login') }}" class="btn btn-primary btn-rec2">{{ __('links.register') }}</a>
+                            <a href="{{ LaravelLocalization::localizeUrl('/user-login') }}" class="btn btn-primary btn-rec2">{{ __('links.login') }}</a>
 
                     @endif
 

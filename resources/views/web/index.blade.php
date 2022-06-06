@@ -66,8 +66,8 @@
 
                                 @else
 
-                                {{ __('links.login') }}
-                                   {{-- {{ __('links.joinNow') }} --}}
+
+                                   {{ __('links.joinNow') }}
 
                                 @endif
 
@@ -210,8 +210,8 @@
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12 join-text">
                     <h2 class="dir-text">
-                        {{ __('links.login') }}
-                        {{-- {{ __('links.joinNow') }} --}}
+
+                        {{ __('links.joinNow') }}
                     </h2>
                     <p class="dir-text">
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
@@ -226,7 +226,10 @@
                 @else
 
 
-                        <a href="{{ LaravelLocalization::localizeUrl('/user-login') }}" class="btn btn-primary btn-rec2">{{ __('links.register') }}</a>
+                        <a href="{{ LaravelLocalization::localizeUrl('/user-login') }}" class="btn btn-primary btn-rec2">
+                            {{ __('links.login') }}
+
+                        </a>
 
                 @endif
 
