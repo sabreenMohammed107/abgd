@@ -1455,14 +1455,6 @@ a:focus {
     -webkit-box-shadow: none;
 }
 
-.an-link:focus {
-    outline: none !important;
-    outline-width: 0 !important;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-}
-
 .an-link {
     text-decoration: none;
 }
