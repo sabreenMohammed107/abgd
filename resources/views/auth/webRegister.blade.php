@@ -1,5 +1,10 @@
 @extends('web.layout.web')
 
+<?php
+$xx= __('links.home')
+?>
+
+@section('title', '' . $xx. '')
 
 @section('content')
 <section class="login-sec pt-5 pb-5 mb-5">

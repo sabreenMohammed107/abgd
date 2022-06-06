@@ -6,15 +6,13 @@ use App\Models\Partner;
 use App\Models\School;
 use App\Models\User;
 use App\Models\User_parent;
-
+use Hash;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Lang as Lang;
 use Validator;
-use Hash;
-use Illuminate\Support\Arr;
 
 class UsersController extends Controller
 {
@@ -48,8 +46,8 @@ class UsersController extends Controller
     {
 
         $identifier = request()->get('user_identifier');
-        $vali=[
-            'identifier'=>$identifier,
+        $vali = [
+            'identifier' => $identifier,
         ];
         // if(filter_var($identifier, FILTER_VALIDATE_EMAIL)){
         //     return 'email';
@@ -58,8 +56,6 @@ class UsersController extends Controller
         // return 'phone';
 
         if (is_numeric($identifier)) {
-
-
 
             return 0;
         }
@@ -74,47 +70,46 @@ class UsersController extends Controller
         $this->validate($request, [
             'user_identifier' => 'required',
             'password' => 'required|min:6|max:20',
-        ],[
+        ], [
             'user_identifier.required' => Lang::get('links.userMobileLgoin'),
-            'password.required' =>  Lang::get('links.passwordLogin'),
+            'password.required' => Lang::get('links.passwordLogin'),
             'password.min' => Lang::get('links.password_min'),
             'password.max' => Lang::get('links.password_max'),
 
-
         ]);
 
-
         if ($this->username() == 0) {
+            $vali = [
+                'user_identifier' => $input['user_identifier'],
+            ];
+            $validatorr = Validator::make($vali, [
 
+                'user_identifier' => 'regex:/(01)[0-9]{9}/',
+
+            ], [
+
+                'user_identifier.regex' => Lang::get('links.phone_regex'),
+
+            ]);
+
+            if ($validatorr->fails()) {
+                return redirect()->back()->withInput()
+                    ->withErrors($validatorr->messages());
+
+            }
 
             if (auth()->attempt(array('phone' => $input['user_identifier'], 'password' => $input['password'], 'type' => 'user'))) {
 
                 return redirect()->intended(url('/'));
 
             } else {
-                // return redirect()->route('user-login')
-                // ->withErrors('Email-Address And Password Are Wrong.');
-  $vali=[
-                'user_identifier'=>$input['user_identifier'],
-            ];
-            $validatorr = Validator::make( $vali, [
 
-                'user_identifier' => 'regex:/(01)[0-9]{9}/',
-
-            ],[
-
-                'user_identifier.regex' => Lang::get('links.phone_regex'),
-
-
-
-            ]);
-                      return redirect()->back()->withInput()
-                    ->withErrors($validatorr->messages());
+                return redirect()->route('user-login')
+                ->withErrors( Lang::get('links.invalid_msg'));
 
             }
 
-        }
-        else {
+        } else {
 
             if (auth()->attempt(array('name' => $input['user_identifier'], 'password' => $input['password'], 'type' => 'user'))) {
 
@@ -156,7 +151,7 @@ class UsersController extends Controller
 
         $validator = Validator::make($request->all(), [
 
-            'name' => ['required','unique:users'],
+            'name' => ['required', 'unique:users'],
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'phone' => ['required', 'regex:/(01)[0-9]{9}/', 'unique:users'],
             'captcha' => 'required|captcha',
@@ -165,7 +160,7 @@ class UsersController extends Controller
             'child_no' => 'required',
             'total_cost' => 'required',
 
-        ],[
+        ], [
             'name.required' => Lang::get('links.name_required'),
             'name.unique' => Lang::get('links.name_unique'),
             'phone.unique' => Lang::get('links.phone_unique'),
@@ -179,8 +174,6 @@ class UsersController extends Controller
             'full_name.required' => Lang::get('links.fullname_required'),
             'total_cost.required' => Lang::get('links.fees_required'),
             'child_no.required' => Lang::get('links.childNo_required'),
-
-
 
         ]);
 
@@ -209,11 +202,11 @@ class UsersController extends Controller
             $user_parent->child_no = $request->child_no;
             $user_parent->total_cost = $request->total_cost;
             $user_parent->gender = $request->gender;
-            $user_parent->other_schools=$request->other_schools;
+            $user_parent->other_schools = $request->other_schools;
 
             $user_parent->save();
-            if(!empty($request->get('schools'))){
-                if($request->get('schools')[0] !=0){
+            if (!empty($request->get('schools'))) {
+                if ($request->get('schools')[0] != 0) {
                     $user_parent->schools()->attach($request->schools);
                 }
 
@@ -244,7 +237,7 @@ class UsersController extends Controller
         $user_parent = User_parent::where('id', $request->user_parent)->first();
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:users,name,'. $user_parent->user_id,
+            'name' => 'required|unique:users,name,' . $user_parent->user_id,
             // 'email' => 'required|email|unique:users,email,'. $user_parent->user_id,
             'phone' => 'required|regex:/(01)[0-9]{9}/|unique:users,phone,' . $user_parent->user_id,
 
@@ -254,7 +247,7 @@ class UsersController extends Controller
             'child_no' => 'required',
             'total_cost' => 'required',
 
-        ],[
+        ], [
             'name.required' => Lang::get('links.name_required'),
             'name.unique' => Lang::get('links.name_unique'),
             'phone.unique' => Lang::get('links.phone_unique'),
@@ -268,11 +261,11 @@ class UsersController extends Controller
             'child_no.required' => Lang::get('links.childNo_required'),
 
         ]
-    );
+        );
 
         if ($validator->fails()) {
             return redirect()->back()->withInput()
-            ->withErrors($validator->messages());
+                ->withErrors($validator->messages());
         }
 
         DB::beginTransaction();
@@ -280,55 +273,55 @@ class UsersController extends Controller
             // Disable foreign key checks!
             DB::statement('SET FOREIGN_KEY_CHECKS=0;');
 
-        $input =[
-            'name'=>$request->get('name'),
-            // 'email'=>$request->get('email'),
-            'phone'=>$request->get('phone'),
-        ];
-        if(!empty($request->get('password'))){
-            $input['password'] = Hash::make($request->get('password'));
-        }
-        // else{
-        //     $input = Arr::except($input,array('password'));
-        // }
-
-        $user = User::find($user_parent->user_id);
-
-        $user->update($input);
-        // dd($user);
-        $parent=[
-'user_id'=> $user->id,
-'full_name'=>$request->full_name,
-'child_no'=>$request->child_no,
-'total_cost'=>$request->total_cost,
-'gender'=>$request->gender,
-'other_schools'=>$request->other_schools,
-
-        ];
-
-        // $user_parent = User_parent::find($user_parent);
-        // dd($user_parent);
-
-        $user_parent->update($parent);
-        if(!empty($request->get('schools'))){
-            if($request->get('schools')[0] !=0){
-        $user_parent->schools()->sync($request->schools);
+            $input = [
+                'name' => $request->get('name'),
+                // 'email'=>$request->get('email'),
+                'phone' => $request->get('phone'),
+            ];
+            if (!empty($request->get('password'))) {
+                $input['password'] = Hash::make($request->get('password'));
             }
- }
+            // else{
+            //     $input = Arr::except($input,array('password'));
+            // }
 
-        Auth::login($user);
-        DB::commit();
-        // Enable foreign key checks!
-        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-        session()->flash('success', Lang::get('links.update_message'));
-        return view('web.success')->with('flash_success', Lang::get('links.update_message'));
+            $user = User::find($user_parent->user_id);
 
-    } catch (\Throwable$e) {
-        // throw $th;
-        DB::rollback();
-        return redirect()->back()->withInput()->withErrors($e->getMessage());
-        // return redirect()->back()->withInput()->withErrors('حدث خطأ فى ادخال البيانات قم بمراجعتها مرة اخرى');
-    }
+            $user->update($input);
+            // dd($user);
+            $parent = [
+                'user_id' => $user->id,
+                'full_name' => $request->full_name,
+                'child_no' => $request->child_no,
+                'total_cost' => $request->total_cost,
+                'gender' => $request->gender,
+                'other_schools' => $request->other_schools,
+
+            ];
+
+            // $user_parent = User_parent::find($user_parent);
+            // dd($user_parent);
+
+            $user_parent->update($parent);
+            if (!empty($request->get('schools'))) {
+                if ($request->get('schools')[0] != 0) {
+                    $user_parent->schools()->sync($request->schools);
+                }
+            }
+
+            Auth::login($user);
+            DB::commit();
+            // Enable foreign key checks!
+            DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+            session()->flash('success', Lang::get('links.update_message'));
+            return view('web.success')->with('flash_success', Lang::get('links.update_message'));
+
+        } catch (\Throwable$e) {
+            // throw $th;
+            DB::rollback();
+            return redirect()->back()->withInput()->withErrors($e->getMessage());
+            // return redirect()->back()->withInput()->withErrors('حدث خطأ فى ادخال البيانات قم بمراجعتها مرة اخرى');
+        }
 
     }
 }

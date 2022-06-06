@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-	<title>Abgad</title>
+	<title>Abgad - @yield('title')</title>
     <script type="application/ld+json">
         {
           "@context": "https://schema.org/",

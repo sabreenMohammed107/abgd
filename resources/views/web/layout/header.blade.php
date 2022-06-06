@@ -54,7 +54,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                {{ __('links.welcome') }} {{ Auth::user()->name ?? '' }}
+
+                                {{ __('links.welcome') }} {{ strip_tags(str_limit(Auth::user()->name ?? '', $limit = 16, $end = '')) }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('user-profile', Auth::user()->id) }}"> <i class="fa fa-user mr-2"></i> {{ __('links.my_profile') }} </a>

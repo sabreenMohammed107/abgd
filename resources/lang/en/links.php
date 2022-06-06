@@ -34,7 +34,7 @@ return [
 
   /*--Menu--*/
   'menu'=>'Menu',
-  'home' => 'Home',
+  'home' => 'Home Page',
   'about_us' => 'About Us ',
   'products'=>'Products',
   'partenters'=>'Our Parteners',

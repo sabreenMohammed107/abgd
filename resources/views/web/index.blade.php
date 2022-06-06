@@ -1,5 +1,9 @@
 @extends('web.layout.web')
+<?php
+$xx= __('links.home')
+?>
 
+@section('title', '' . $xx. '')
 
 @section('content')
 <section class="about-sec reveal" id="about-sec">
