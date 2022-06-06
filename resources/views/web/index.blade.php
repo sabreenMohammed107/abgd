@@ -66,8 +66,8 @@
 
                                 @else
 
-
-                                   {{ __('links.joinNow') }}
+                                {{ __('links.login') }}
+                                   {{-- {{ __('links.joinNow') }} --}}
 
                                 @endif
 
@@ -210,8 +210,8 @@
                 </div>
                 <div class="col-lg-8 col-md-7 col-sm-12 join-text">
                     <h2 class="dir-text">
-
-                        {{ __('links.joinNow') }}
+                        {{ __('links.login') }}
+                        {{-- {{ __('links.joinNow') }} --}}
                     </h2>
                     <p class="dir-text">
                         @if (LaravelLocalization::getCurrentLocale() === 'en')
