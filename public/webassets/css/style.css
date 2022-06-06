@@ -1446,3 +1446,15 @@ select {
         padding-left: 30px;
     }
 }
+
+a:focus {
+    outline: none;
+}
+
+.an-link {
+    text-decoration: none;
+}
+
+.an-link:hover {
+    text-decoration: underline;
+}

@@ -21,7 +21,7 @@
 
                 <h6>
                      {{__('links.wait')}}
-                     <a href="{{ LaravelLocalization::localizeUrl('/') }}" class="btn btn-primary btn-rec2" id="next" ><i class="fa-solid fa-arrow-pointer"></i>
+                     <a href="{{ LaravelLocalization::localizeUrl('/') }}" class="an-link" id="next" >{{__('links.clickHere')}} <i class="fa-solid fa-arrow-pointer"></i>
                      </a>
                     </h6>
 

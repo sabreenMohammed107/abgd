@@ -173,6 +173,7 @@ class UsersController extends Controller
             'phone.regex' => Lang::get('links.phone_regex'),
             'captcha.required' => Lang::get('links.captcha_required'),
             'captcha.captcha' => Lang::get('links.captcha_captcha'),
+            'password.same' => Lang::get('links.password_same'),
             'password.min' => Lang::get('links.password_min'),
             'password.max' => Lang::get('links.password_max'),
             'full_name.required' => Lang::get('links.fullname_required'),
@@ -247,17 +248,24 @@ class UsersController extends Controller
             // 'email' => 'required|email|unique:users,email,'. $user_parent->user_id,
             'phone' => 'required|regex:/(01)[0-9]{9}/|unique:users,phone,' . $user_parent->user_id,
 
-            'password' => 'same:confirm-password',
             'captcha' => 'required|captcha',
-        ],
-        [
+            'password' => 'confirmed',
+            'full_name' => 'required',
+            'child_no' => 'required',
+            'total_cost' => 'required',
+
+        ],[
             'name.required' => Lang::get('links.name_required'),
+            'name.unique' => Lang::get('links.name_unique'),
             'phone.unique' => Lang::get('links.phone_unique'),
             'phone.required' => Lang::get('links.phone_required'),
             'phone.regex' => Lang::get('links.phone_regex'),
-            'password.same' => Lang::get('links.password_same'),
             'captcha.required' => Lang::get('links.captcha_required'),
-
+            'captcha.captcha' => Lang::get('links.captcha_captcha'),
+            'password.confirmed' => Lang::get('links.password_same'),
+            'full_name.required' => Lang::get('links.fullname_required'),
+            'total_cost.required' => Lang::get('links.fees_required'),
+            'child_no.required' => Lang::get('links.childNo_required'),
 
         ]
     );

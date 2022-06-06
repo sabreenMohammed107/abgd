@@ -215,4 +215,5 @@ return [
 'fees_required'=>'حقل اجمالي المصايف مطلوب',
 'childNo_required'=>'حقل عدد الأطفال',
 'captcha_captcha'=>'رمز التحقق خاطىء',
+'clickHere'=>'أو اضغط هنا ',
 ];

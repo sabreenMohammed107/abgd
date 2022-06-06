@@ -207,6 +207,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'fees_required'=>'Total Fees Required',
 'childNo_required'=>'Children Count Required',
 'captcha_captcha'=>'Incorrect Captcha',
+'clickHere'=>'Or Click Here',
 ];
 
 
