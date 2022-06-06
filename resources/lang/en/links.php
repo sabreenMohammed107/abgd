@@ -49,7 +49,7 @@ return [
   'search'=>'Search',
   'search_text'=>'Search over 10.000 products',
   'account'=>'Account',
-  'signin_up'=>'Don\’t have Account ? Register Now',
+  'signin_up'=>'Don’t have Account ? Register Now',
   'signin_up2'=>'Register New Account',
   'sign_out'=>'Sign Out',
   'privacy_policy'=>'privacy policy',
