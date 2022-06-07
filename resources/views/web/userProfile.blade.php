@@ -152,6 +152,7 @@ $xx= __('links.profile')
 
 @endsection
 @section('scripts')
+<script src="{{ asset('webassets/js/jquery.passwordstrength.js')}}"></script>
 <script type="text/javascript">
     $('#reload').click(function () {
         $.ajax({
@@ -172,5 +173,28 @@ document.getElementById("total_cost").addEventListener("change", function() {
   if (v < 1) this.value = 1;
 
 });
+</script>
+<script type="text/javascript">
+    $(function() {
+        $("#password").passwordStrength({
+             // The class names to give the indicator element, according to the current password strength
+    strengthClassNames: [{
+        name: "very-weak",
+        text: " "
+      }, {
+        name: "weak",
+        text: " "
+      }, {
+        name: "mediocre",
+        text: " "
+      }, {
+        name: "strong",
+        text: " "
+      }, {
+        name: "very-strong",
+        text: " "
+      }]
+        });
+    });
 </script>
 @endsection

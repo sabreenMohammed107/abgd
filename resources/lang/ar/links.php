@@ -216,4 +216,5 @@ return [
 'childNo_required'=>'حقل عدد الاطفال مطلوب',
 'captcha_captcha'=>'رمز التحقق خاطىء',
 'clickHere'=>'أو اضغط هنا ',
+'password_regex'=>'كلمة المرور ضعيفة',
 ];

@@ -192,22 +192,23 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 
 // validate messages
 'userMobileLgoin'=>'User name/Mobile number is required ',
-'name_required'=>'Name Required',
-'name_unique'=>'Name already exists',
+'name_required'=>'User Name Required',
+'name_unique'=>'User Name already exists',
 'phone_unique'=>'Mobile Number already exists',
 'phone_required'=>'Mobile Number Required',
 'phone_regex'=>'Invalid Mobile Number',
-'captcha_required'=>' Captcha Required',
+'captcha_required'=>'Captcha Required',
 'password_same'=>'Password/Confirm password do not match',
 'passwordLogin'=>'Password Required',
-'password_min'=>'Password less than 6',
-'password_max'=>'password more than 20',
+'password_min'=>'Password less than 6 characters',
+'password_max'=>'Password more than 20 characters',
 'invalid_msg'=>'Invalid User Name / Password',
 'fullname_required'=>'Full Name Required',
 'fees_required'=>'Total Fees Required',
 'childNo_required'=>'Children Count Required',
 'captcha_captcha'=>'Incorrect Captcha',
 'clickHere'=>'Or Click Here',
+'password_regex'=>'Week Password',
 ];
 
 

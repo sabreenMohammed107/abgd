@@ -29,7 +29,7 @@ $xx= __('links.home')
                     @csrf
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.full_name') }}</label>
-                        <input type="text" value="{{old('full_name')}}" name="full_name" class="form-control  @error('full_name') is-invalid @enderror" autofocus>
+                        <input type="text" value="{{old('full_name')}}" maxlength="70" name="full_name" class="form-control  @error('full_name') is-invalid @enderror" autofocus>
                         @error('full_name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -97,7 +97,7 @@ $xx= __('links.home')
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.name') }}</label>
-                        <input type="text" id="name" value="{{old('name')}}" name="name" maxlength="20" class="form-control  @error('name') is-invalid @enderror">
+                        <input type="text" id="name" value="{{old('name')}}" name="name" maxlength="15" class="form-control  @error('name') is-invalid @enderror">
                         @error('name')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -118,6 +118,7 @@ $xx= __('links.home')
                         <label class="form-label">{{ __('links.password') }}</label>
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
                     </div>
+
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.confirm_password') }}</label>
                         <input id="password-confirm" type="password" class="form-control" name="confirm-password"  autocomplete="new-password">
@@ -168,6 +169,7 @@ $xx= __('links.home')
 
 @endsection
 @section('scripts')
+<script src="{{ asset('webassets/js/jquery.passwordstrength.js')}}"></script>
 <script type="text/javascript">
     $('#reload').click(function () {
         $.ajax({
@@ -189,5 +191,28 @@ document.getElementById("total_cost").addEventListener("change", function() {
   if (v < 1) this.value = 1;
 
 });
+</script>
+   <script type="text/javascript">
+    $(function() {
+        $("#password").passwordStrength({
+             // The class names to give the indicator element, according to the current password strength
+    strengthClassNames: [{
+        name: "very-weak",
+        text: " "
+      }, {
+        name: "weak",
+        text: " "
+      }, {
+        name: "mediocre",
+        text: " "
+      }, {
+        name: "strong",
+        text: " "
+      }, {
+        name: "very-strong",
+        text: " "
+      }]
+        });
+    });
 </script>
 @endsection
