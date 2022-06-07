@@ -199,7 +199,7 @@ return [
 'consult_specialist'=>'استشر مختص',
 
 // validate messages
-'userMobileLgoin'=>'حقل الاسم / الموبايل مطلوب',
+'userMobileLgoin'=>'حقل اسم المستخدم / الهاتف المحمول مطلوب',
 'name_required'=>'حقل الاسم مطلوب',
 'name_unique'=>'حقل الاسم موجود بالفعل',
 'phone_unique'=>'حقل الهاتف موجود بالفعل',
@@ -212,7 +212,7 @@ return [
 'password_max'=>'كلمة المرور اعلي من 20',
 'invalid_msg'=>'حقل الاسم / كلمه المرور غير صحيحة',
 'fullname_required'=>'حقل الاسم بالكامل مطلوب',
-'fees_required'=>'حقل اجمالي المصايف مطلوب',
+'fees_required'=>'حقل اجمالي المصاريف مطلوب',
 'childNo_required'=>'حقل عدد الأطفال',
 'captcha_captcha'=>'رمز التحقق خاطىء',
 'clickHere'=>'أو اضغط هنا ',

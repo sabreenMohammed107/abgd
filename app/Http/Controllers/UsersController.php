@@ -112,7 +112,7 @@ class UsersController extends Controller
             ];
             $validatorr = Validator::make($vali, [
 
-                'user_identifier' => 'regex:/(01)[0-9]{9}/',
+                'user_identifier' => 'regex:/(01)[0-2,5]{1}[0-9]{8}/',
 
             ], [
 
@@ -181,7 +181,7 @@ class UsersController extends Controller
 
             'name' => ['required', 'unique:users'],
             // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required', 'regex:/(01)[0-9]{9}/', 'unique:users'],
+            'phone' => ['required', 'regex:/(01)[0-2,5]{1}[0-9]{8}/', 'unique:users'],
             'captcha' => 'required|captcha',
             'password' => 'same:confirm-password|min:6|max:20',
             'full_name' => 'required',
@@ -268,7 +268,7 @@ class UsersController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => 'required|unique:users,name,' . $user_parent->user_id,
             // 'email' => 'required|email|unique:users,email,'. $user_parent->user_id,
-            'phone' => 'required|regex:/(01)[0-9]{9}/|unique:users,phone,' . $user_parent->user_id,
+            'phone' => 'required|regex:/(01)[0-2,5]{1}[0-9]{8}/|unique:users,phone,' . $user_parent->user_id,
 
             'captcha' => 'required|captcha',
             'password' => 'confirmed',
