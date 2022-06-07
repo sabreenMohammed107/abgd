@@ -7,8 +7,13 @@ $xx= __('links.profile')
 
 @section('content')
 @if(session()->has('message'))
-    <div class="alert alert-success">
-      vvv  {{ session()->get('message') }}
+    <div class="alert alert-success"
+    @if (LaravelLocalization::getCurrentLocale() === 'en')
+    style="text-align: right"
+                        @else
+                        style="text-align: left"
+                        @endif>
+        {{ session()->get('message') }}
     </div>
 @endif
 <section class="login-sec pt-5 pb-5 mb-5 ">
