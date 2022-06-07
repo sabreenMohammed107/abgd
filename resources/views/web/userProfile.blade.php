@@ -100,7 +100,7 @@ $xx= __('links.profile')
                     </div> --}}
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.password') }}</label>
-                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
+                        <input id="password" type="password" placeholder="******" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.confirm_password') }}</label>
