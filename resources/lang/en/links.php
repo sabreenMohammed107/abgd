@@ -209,7 +209,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'captcha_captcha'=>'Incorrect Captcha',
 'clickHere'=>'Or Click Here',
 'password_regex'=>'password must be at least 6 characters with uppercase character, lowercase character and number',
-'phone_max'=>'The phone may not be greater than 11 digit.',
+'phone_max'=>'Mobile number shouldn’t be greater than 11 digits.',
 ];
 
 
