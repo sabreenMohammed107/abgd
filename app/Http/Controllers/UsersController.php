@@ -45,9 +45,6 @@ class UsersController extends Controller
         return view('web.success')->with('flash_success', Lang::get('links.update_message'));
     }
 
-
-
-
     public function login()
     {
         $partenters = Partner::all();
@@ -133,7 +130,7 @@ class UsersController extends Controller
             } else {
 
                 return redirect()->route('user-login')
-                ->withErrors( Lang::get('links.invalid_msg'));
+                    ->withErrors(Lang::get('links.invalid_msg'));
 
             }
 
@@ -146,7 +143,7 @@ class UsersController extends Controller
             } else {
 
                 return redirect()->route('user-login')
-                ->withErrors( Lang::get('links.invalid_msg'));
+                    ->withErrors(Lang::get('links.invalid_msg'));
 
             }
         }
@@ -178,33 +175,30 @@ class UsersController extends Controller
     {
 
         $validator = Validator::make($request->all(), [
-
-            'name' => ['required', 'unique:users'],
-            // 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'phone' => ['required','min:11','max:11', 'regex:/(01)[0-2,5]{1}[0-9]{8}/', 'unique:users'],
-            'captcha' => 'required|captcha',
-            'password' => ['same:confirm-password','regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
             'full_name' => 'required',
+            'phone' => ['required', 'min:11', 'max:11', 'regex:/(01)[0-2,5]{1}[0-9]{8}/', 'unique:users'],
+            'name' => ['required', 'unique:users'],
             'child_no' => 'required',
             'total_cost' => 'required',
+            'password' => ['same:confirm-password', 'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
+            'captcha' => 'required|captcha',
 
         ], [
-            'name.required' => Lang::get('links.name_required'),
-            'name.unique' => Lang::get('links.name_unique'),
+
+            'full_name.required' => Lang::get('links.fullname_required'),
             'phone.unique' => Lang::get('links.phone_unique'),
             'phone.required' => Lang::get('links.phone_required'),
             'phone.regex' => Lang::get('links.phone_regex'),
             'phone.max' => Lang::get('links.phone_max'),
             'phone.min' => Lang::get('links.phone_regex'),
+            'child_no.required' => Lang::get('links.childNo_required'),
+            'total_cost.required' => Lang::get('links.fees_required'),
+            'name.required' => Lang::get('links.name_required'),
+            'name.unique' => Lang::get('links.name_unique'),
             'password.regex' => Lang::get('links.password_regex'),
+            'password.same' => Lang::get('links.password_same'),
             'captcha.required' => Lang::get('links.captcha_required'),
             'captcha.captcha' => Lang::get('links.captcha_captcha'),
-            'password.same' => Lang::get('links.password_same'),
-            // 'password.min' => Lang::get('links.password_min'),
-            // 'password.max' => Lang::get('links.password_max'),
-            'full_name.required' => Lang::get('links.fullname_required'),
-            'total_cost.required' => Lang::get('links.fees_required'),
-            'child_no.required' => Lang::get('links.childNo_required'),
 
         ]);
 
@@ -269,31 +263,30 @@ class UsersController extends Controller
         $user_parent = User_parent::where('id', $request->user_parent)->first();
 
         $validator = Validator::make($request->all(), [
-            'name' => 'required|unique:users,name,' . $user_parent->user_id,
-            // 'email' => 'required|email|unique:users,email,'. $user_parent->user_id,
-            'phone' => 'required|min:11|max:11|regex:/(01)[0-2,5]{1}[0-9]{8}/|unique:users,phone,' . $user_parent->user_id,
-'password'=>['regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
-            'captcha' => 'required|captcha',
-            'password' => 'confirmed',
             'full_name' => 'required',
+            'phone' => 'required|min:11|max:11|regex:/(01)[0-2,5]{1}[0-9]{8}/|unique:users,phone,' . $user_parent->user_id,
             'child_no' => 'required',
             'total_cost' => 'required',
+            'password' => ['regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
+            'name' => 'required|unique:users,name,' . $user_parent->user_id,
+            'password' => 'confirmed',
+            'captcha' => 'required|captcha',
 
         ], [
-            'name.required' => Lang::get('links.name_required'),
-            'name.unique' => Lang::get('links.name_unique'),
+            'full_name.required' => Lang::get('links.fullname_required'),
             'phone.unique' => Lang::get('links.phone_unique'),
             'phone.required' => Lang::get('links.phone_required'),
-            'password.regex' => Lang::get('links.password_regex'),
             'phone.max' => Lang::get('links.phone_max'),
             'phone.min' => Lang::get('links.phone_regex'),
+            'child_no.required' => Lang::get('links.childNo_required'),
+            'total_cost.required' => Lang::get('links.fees_required'),
+            'name.required' => Lang::get('links.name_required'),
+            'name.unique' => Lang::get('links.name_unique'),
             'password.regex' => Lang::get('links.password_regex'),
+            'password.regex' => Lang::get('links.password_regex'),
+            'password.confirmed' => Lang::get('links.password_same'),
             'captcha.required' => Lang::get('links.captcha_required'),
             'captcha.captcha' => Lang::get('links.captcha_captcha'),
-            'password.confirmed' => Lang::get('links.password_same'),
-            'full_name.required' => Lang::get('links.fullname_required'),
-            'total_cost.required' => Lang::get('links.fees_required'),
-            'child_no.required' => Lang::get('links.childNo_required'),
 
         ]
         );
@@ -348,11 +341,10 @@ class UsersController extends Controller
             DB::commit();
             // Enable foreign key checks!
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-            // session()->flash('success', Lang::get('links.update_message'));
+            session()->flash('message', Lang::get('links.update_message'));
 
             // return view('web.success')->with('flash_success', Lang::get('links.update_message'));
-            return \Redirect::route('success-profile')->with('message', 'State saved correctly!!!');
-
+            return redirect()->back()->with('message',  Lang::get('links.update_message'));
 
         } catch (\Throwable$e) {
             // throw $th;

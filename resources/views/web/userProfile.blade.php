@@ -6,7 +6,12 @@ $xx= __('links.profile')
 @section('title', '' . $xx. '')
 
 @section('content')
-<section class="login-sec pt-5 pb-5 mb-5 reveal">
+@if(session()->has('message'))
+    <div class="alert alert-success">
+      vvv  {{ session()->get('message') }}
+    </div>
+@endif
+<section class="login-sec pt-5 pb-5 mb-5 ">
     <div class="container">
         <div class="row dir">
             <div class="col-lg-6 col-md-12">

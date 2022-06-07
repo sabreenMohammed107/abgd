@@ -59,7 +59,7 @@ return [
   'my_order'=>'My Orders',
   'my_profile'=>'Profile',
   'edit_my_profile'=>'Edit Profile',
-  'update_message'=>'Edit Profile Succefully',
+  'update_message'=>'Edit profile completed successfully',
   'help_fqa'=>'Help and Faq',
   'checkout'=>'Checkout',
   'view_cart'=>'View Cart',
@@ -208,8 +208,8 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'childNo_required'=>'Children Count Required',
 'captcha_captcha'=>'Incorrect Captcha',
 'clickHere'=>'Or Click Here',
-'password_regex'=>'Week Password',
-'phone_max'=>'The phone may not be greater than 11 characters.',
+'password_regex'=>'password must be at least 6 characters with uppercase character, lowercase character and number',
+'phone_max'=>'The phone may not be greater than 11 digit.',
 ];
 
 
