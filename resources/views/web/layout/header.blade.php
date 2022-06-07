@@ -117,7 +117,7 @@
 
 
 
-                        <a href="#about-sec" class="btn btn-primary btn-more">{{ __('links.show_more') }}</a>
+                        <a href="{{ LaravelLocalization::localizeUrl('/') }}#about-sec" class="btn btn-primary btn-more">{{ __('links.show_more') }}</a>
                     </div>
                 </div>
                 <div class="col-lg-6">
