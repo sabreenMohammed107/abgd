@@ -97,12 +97,12 @@ class UsersController extends Controller
 
         $this->validate($request, [
             'user_identifier' => 'required',
-            'password' => 'required|min:6|max:20',
+            'password' => 'required',
         ], [
             'user_identifier.required' => Lang::get('links.userMobileLgoin'),
             'password.required' => Lang::get('links.passwordLogin'),
-            'password.min' => Lang::get('links.password_min'),
-            'password.max' => Lang::get('links.password_max'),
+            // 'password.min' => Lang::get('links.password_min'),
+            // 'password.max' => Lang::get('links.password_max'),
 
         ]);
 
