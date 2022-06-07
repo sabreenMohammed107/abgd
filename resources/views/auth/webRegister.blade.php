@@ -88,7 +88,7 @@ $xx= __('links.home')
 
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.total_cost') }}</label>
-                        <input type="number" value="{{old('total_cost')}}" name="total_cost" class="form-control @error('total_cost') is-invalid @enderror">
+                        <input type="number" id="total_cost" min="1" value="{{old('total_cost')}}" name="total_cost" class="form-control @error('total_cost') is-invalid @enderror">
                         @error('total_cost')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -182,6 +182,12 @@ $xx= __('links.home')
   let v = parseInt(this.value);
   if (v < 1) this.value = 1;
   if (v > 5) this.value = 5;
+});
+
+document.getElementById("total_cost").addEventListener("change", function() {
+  let v = parseInt(this.value);
+  if (v < 1) this.value = 1;
+
 });
 </script>
 @endsection

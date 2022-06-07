@@ -55,7 +55,7 @@ $xx= __('links.profile')
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.childNo') }}</label>
-                        <input type="number" name="child_no" value="{{$user_parent->child_no}}" class="form-control">
+                        <input type="number" id="inp" name="child_no" min="1" max="5" value="{{$user_parent->child_no}}" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.school') }}</label>
@@ -78,7 +78,7 @@ $xx= __('links.profile')
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.total_cost') }}</label>
-                        <input type="number" value="{{$user_parent->total_cost}}"name="total_cost" class="form-control">
+                        <input type="number" id="total_cost" min="1" value="{{$user_parent->total_cost}}"name="total_cost" class="form-control">
                     </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.name') }}</label>
@@ -162,5 +162,15 @@ $xx= __('links.profile')
             }
         });
     });
+    document.getElementById("inp").addEventListener("change", function() {
+  let v = parseInt(this.value);
+  if (v < 1) this.value = 1;
+  if (v > 5) this.value = 5;
+});
+document.getElementById("total_cost").addEventListener("change", function() {
+  let v = parseInt(this.value);
+  if (v < 1) this.value = 1;
+
+});
 </script>
 @endsection
