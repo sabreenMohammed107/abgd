@@ -9,9 +9,10 @@ $xx= __('links.profile')
 @if(session()->has('message'))
     <div class="alert alert-success"
     @if (LaravelLocalization::getCurrentLocale() === 'en')
-    style="text-align: right"
+    style="text-align: left"
                         @else
-                        style="text-align: left"
+
+                        style="text-align: right"
                         @endif>
         {{ session()->get('message') }}
     </div>
