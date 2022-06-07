@@ -194,7 +194,7 @@ class UsersController extends Controller
             'phone.unique' => Lang::get('links.phone_unique'),
             'phone.required' => Lang::get('links.phone_required'),
             'phone.regex' => Lang::get('links.phone_regex'),
-            'phone.regex' => Lang::get('links.phone_regex'),
+            'phone.max' => Lang::get('links.phone_max'),
             'phone.min' => Lang::get('links.phone_regex'),
             'password.max' => Lang::get('links.password_regex'),
             'captcha.required' => Lang::get('links.captcha_required'),
