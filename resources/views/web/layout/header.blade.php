@@ -123,8 +123,7 @@
 
                 <div class="col-lg-6">
                     <div class="service-slider">
-                        <div class="ss-single">
-                        </div>
+
 
 
                         @foreach ($homeSliders as $slider)
