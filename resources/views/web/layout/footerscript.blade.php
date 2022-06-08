@@ -3,8 +3,8 @@
 	<script src="{{ asset('webassets/js/popper.min.j')}}s"></script>
 	<!--====== Slider ======-->
 	<script src="{{ asset('webassets/js/jquery-2.1.4.min.js')}}"></script>
-	{{-- <script src="{{ asset('webassets/js/owl.carousel.min.js')}}"></script> --}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<script src="{{ asset('webassets/js/owl.carousel.min.js')}}"></script>
+    {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
         <script>
             $('.service-slider').owlCarousel({
                 loop: true,

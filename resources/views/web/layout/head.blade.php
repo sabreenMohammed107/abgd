@@ -31,8 +31,7 @@
     <link rel="stylesheet" href="{{ asset('webassets/css/bootstrap.min.css')}}" />
 	{{-- <link rel="stylesheet" href="{{ asset('webassets/css/bootstrap.min.css')}}" /> --}}
     <link rel="stylesheet" href="{{ asset('webassets/css/owl.carousel.css')}}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css
-    ">
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"> --}}
 
 	<link href="{{ asset('webassets/css/style.css')}}" rel="stylesheet" />
 
