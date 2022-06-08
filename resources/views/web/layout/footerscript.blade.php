@@ -12,7 +12,7 @@
                 nav: false,
                 items: 1,
                 dots: false,
-                autoplay: true,
+                autoplay: false,
                 slidesToShow:1,
             });
         </script>
