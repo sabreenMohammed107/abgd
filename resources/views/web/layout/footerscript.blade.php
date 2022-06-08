@@ -7,20 +7,17 @@
         <script src="{{ asset('webassets/js/slick.js')}}"></script>
 
 <script>
-    $('.service-slider').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: false,
-        items: 1,
-        dots: true,
-        lazyLoad: true,
-        smartSpeed: 900,
-        autoplay:true,
-    autoplayTimeout:8000 ,
-        slidesToShow:1,
-        mouseDrag: true,
-        touchDrag: false,
-    });
+
+        $('.service-slider').owlCarousel({
+			loop: true,
+			margin: 0,
+			nav: false,
+			items: 1,
+			dots: true,
+			autoplay: true,
+			slidesToShow:1,
+		});
+
 </script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>

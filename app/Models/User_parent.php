@@ -25,4 +25,8 @@ class User_parent extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    public function otherSchools()
+    {
+        return $this->hasMany(Other_schools_parent::class, 'user_parent_id','id');
+    }
 }

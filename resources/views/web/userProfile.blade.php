@@ -84,9 +84,51 @@ $xx= __('links.profile')
                         </select>
                     </div>
                     <div class="mb-3">
-                        <label class="form-label ">{{ __('links.otherSchools') }}</label>
-                        <textarea class="form-control " rows="4" name="other_schools">{!! $user_parent->other_schools !!} </textarea>
+                        <div class="form-group">
+                            <label class="form-label ">{{ __('links.otherSchools') }}</label>
+
+                            <input type="text" class="form-control d-block" id="inSchool">
+
+
+                        </div>
+
                     </div>
+
+
+            <div class="mb-3">
+                <button type="button" id="adscol" @if(count($user_parent->otherSchools)>=3) disabled @endif  onclick="addSchool()" class="btn btn-dark" style="margin:0px auto;">{{ __('links.addSchool') }}
+                </button>
+
+            </div>
+
+            <h6>{{ __('links.dclick') }}</h6>
+
+
+
+            <div class="form-group">
+
+                <select name="other_schools[]" multiple class="form-control select-multiple" id="selectedshcol">
+@foreach ($user_parent->otherSchools as $other)
+<option  value="{{$other->id}}">{{$other->school}}</option>
+@endforeach
+                    {{-- <option disabled value=""> أيام المجموعات </option> --}}
+
+                </select>
+
+            </div>
+
+
+        <div class="w-100 my-1" id="added">
+
+
+
+
+
+
+
+
+
+        </div>
                     <div class="mb-3">
                         <label class="form-label">{{ __('links.total_cost') }}</label>
                         <input type="number" id="total_cost" min="1" value="{{$user_parent->total_cost}}"name="total_cost" class="form-control">
@@ -207,5 +249,79 @@ document.getElementById("total_cost").addEventListener("change", function() {
       }]
         });
     });
+    var arrschools = [];
+
+
+function addSchool() {
+
+
+
+  var inSchool = $('#inSchool').val();
+
+  var obj = {
+
+school : inSchool
+
+}
+  arrschools.push(obj);
+
+  console.table(arrschools);
+
+
+
+
+  $('#selectedshcol').empty();
+
+  $.each(arrschools,function(index,elem){
+
+    // var elem = JSON.stringify(elem);
+
+    var option = '<option selected value="'+elem.school+'" ondblclick="removeOpt('+ index + ')">' + elem.school  + '</option>'
+
+    $('#selectedshcol').append(option);
+    if(index==2){
+        $('#adscol').prop('disabled', true);
+    }else{
+        $('#adscol').prop('disabled', false);
+    }
+
+  })
+
+  console.table(inSchool);
+
+  console.table(arrschools);
+
+}
+function removeOpt(index) {
+
+ alert(index);
+ var x = document.getElementById("selectedshcol");
+  x.remove(x.selectedIndex);
+
+// $('#selectedshcol option')[index].remove();
+
+arrschools.splice(index,1);
+// arrschools.remove(index);
+
+ $('#selectedshcol').empty();
+
+$.each(arrschools,function(index,elem){
+
+  // var elem = JSON.stringify(elem);
+
+  var option = '<option selected value="'+elem.school+'" ondblclick="removeOpt('+ index + ')">' + elem.school  + '</option>'
+
+  $('#selectedshcol').append(option);
+  if(index==2){
+        $('#adscol').prop('disabled', true);
+    }else{
+        $('#adscol').prop('disabled', false);
+    }
+
+})
+
+
+
+}
 </script>
 @endsection

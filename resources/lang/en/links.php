@@ -50,7 +50,8 @@ return [
   'search_text'=>'Search over 10.000 products',
   'account'=>'Account',
   'signin_up'=>'Don’t have an account? Register Now',
-  'signin_up2'=>'Please fill out form carefully for registration',
+  'signin_up2'=>'Register New Account',
+  'signin_up3'=>'Please fill out form carefully for registration',
   'sign_out'=>'Sign Out',
   'privacy_policy'=>'privacy policy',
   'term_condation'=>'Terms and Conditions',
@@ -210,6 +211,8 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'clickHere'=>'Or Click Here',
 'password_regex'=>'password must be at least 6 characters with uppercase character, lowercase character and number',
 'phone_max'=>'Mobile number shouldn’t be greater than 11 digits.',
+'addSchool'=>'Add School',
+'dclick'=>'*double click to delete school*',
 ];
 
 

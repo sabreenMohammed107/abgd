@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Other_schools_parent;
 use App\Models\Partner;
 use App\Models\School;
 use App\Models\User;
@@ -227,13 +228,24 @@ class UsersController extends Controller
             $user_parent->child_no = $request->child_no;
             $user_parent->total_cost = $request->total_cost;
             $user_parent->gender = $request->gender;
-            $user_parent->other_schools = $request->other_schools;
+            // $user_parent->other_schools = $request->other_schools;
 
             $user_parent->save();
             if (!empty($request->get('schools'))) {
                 if ($request->get('schools')[0] != 0) {
                     $user_parent->schools()->attach($request->schools);
                 }
+
+            }
+            if (!empty($request->get('other_schools'))) {
+                foreach($request->get('other_schools') as $scol){
+
+                    $other_parent_school = new Other_schools_parent();
+                    $other_parent_school->user_parent_id =$user_parent->id;
+                    $other_parent_school->school = $scol;
+                    $other_parent_school->save();
+                }
+
 
             }
             Auth::login($user);
