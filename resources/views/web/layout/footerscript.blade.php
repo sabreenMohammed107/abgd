@@ -4,7 +4,6 @@
 	<!--====== Slider ======-->
 	<script src="{{ asset('webassets/js/jquery-2.1.4.min.js')}}"></script>
 	<script src="{{ asset('webassets/js/owl.carousel.min.js')}}"></script>
-        <script src="{{ asset('webassets/js/slick.js')}}"></script>
         <script>
             $('.service-slider').owlCarousel({
                 loop: true,
