@@ -7,11 +7,11 @@
     {{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script> --}}
         <script>
             $('.service-slider').owlCarousel({
-                loop: true,
+                loop: false,
                 margin: 0,
                 nav: false,
                 items: 1,
-                dots: true,
+                dots: false,
                 autoplay: true,
                 slidesToShow:1,
             });
