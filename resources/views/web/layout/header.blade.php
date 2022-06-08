@@ -120,11 +120,12 @@
                         <a href="{{ LaravelLocalization::localizeUrl('/') }}#about-sec" class="btn btn-primary btn-more">{{ __('links.show_more') }}</a>
                     </div>
                 </div>
+                {{$homeSliders}}
                 <div class="col-lg-6">
                     <div class="service-slider">
                         <div class="ss-single">
                         </div>
-                        {{$homeSliders}}
+
 
                         @foreach ($homeSliders as $slider)
                             <div class="ss-single">
