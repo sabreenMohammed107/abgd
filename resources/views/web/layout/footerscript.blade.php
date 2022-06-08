@@ -5,46 +5,44 @@
 	<script src="{{ asset('webassets/js/jquery-2.1.4.min.js')}}"></script>
 	<script src="{{ asset('webassets/js/owl.carousel.min.js')}}"></script>
         <script src="{{ asset('webassets/js/slick.js')}}"></script>
+        <script>
+            $('.service-slider').owlCarousel({
+                loop: true,
+                margin: 0,
+                nav: false,
+                items: 1,
+                dots: true,
+                autoplay: true,
+                slidesToShow:1,
+            });
+        </script>
 
-<script>
-
-        $('.service-slider').owlCarousel({
-			loop: true,
-			margin: 0,
-			nav: false,
-			items: 1,
-			dots: true,
-			autoplay: true,
-			slidesToShow:1,
-		});
-
-</script>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-<script>
-    $(document).ready(function () {
-        $('.customer-logos').slick({
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 1500,
-            arrows: false,
-            dots: false,
-            pauseOnHover: false,
-            responsive: [{
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 4
-                }
-            }, {
-                breakpoint: 520,
-                settings: {
-                    slidesToShow: 3
-                }
-            }]
-        });
-    });
-</script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+        <script>
+            $(document).ready(function () {
+                $('.customer-logos').slick({
+                    slidesToShow: 5,
+                    slidesToScroll: 1,
+                    autoplay: true,
+                    autoplaySpeed: 1500,
+                    arrows: false,
+                    dots: false,
+                    pauseOnHover: false,
+                    responsive: [{
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 4
+                        }
+                    }, {
+                        breakpoint: 520,
+                        settings: {
+                            slidesToShow: 3
+                        }
+                    }]
+                });
+            });
+        </script>
+        <!--====== /Slider ======-->
 
 <script>
     function reveal() {
