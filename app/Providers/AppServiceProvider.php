@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
 
         $companyContact = Compamy_contact::first();
 
-        $homeSliders = Slider_image::where('active', 1)->orderBy('order', 'asc')->get();
+        $homeSliders = Slider_image::orderBy('order', 'asc')->get();
         View::share(['homeSliders'=>$homeSliders,'companyContact'=>$companyContact]);
 
     }
