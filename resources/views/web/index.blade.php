@@ -282,12 +282,16 @@ $xx= __('links.home')
                             {{ $companyContact->address_ar }}
                         @endif</b>
                     </div>
+                    @if($companyContact->phones)
                     <div>
                         <span><i class="fa-solid fa-mobile-screen-button"></i></span> <b> {{ strip_tags($companyContact->phones) }}</b>
                     </div>
+                    @endif
+                    @if($companyContact->whatsapp)
                     <div>
                         <span><i class="fa-brands fa-whatsapp"></i></span> <b>{{ $companyContact->whatsapp }}</b>
                     </div>
+                   @endif
                     <div>
                         <span><i class="fa-regular fa-envelope"></i></span> <b>{{ $companyContact->email }}</b>
                     </div>
