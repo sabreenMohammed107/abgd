@@ -124,6 +124,7 @@
                     <div class="service-slider">
                         <div class="ss-single">
                         </div>
+                        {{$homeSliders}}
                         @foreach ($homeSliders as $slider)
                             <div class="ss-single">
                                 <div style="position:relative">
