@@ -9,7 +9,7 @@ return [
   'email' => 'Email',
   'en' => 'English',
   'ar' => 'عربى',
-  'how_register'=>'Contract Steps',
+  'how_register'=>'How it works',
   'joinNow'=>'Join Us Now',
   'wait'=>'Moments and you will be taken back to the home page
  ...  ',
@@ -41,7 +41,7 @@ return [
   'gallery' => 'Gallery',
   'blog' => 'Blog',
   'blogs' => 'Blogs',
-  'contact_us' => 'Contact Us',
+  'contact_us' => 'Get in Touch',
   'offers'=>'Offers',
   'services'=>'Services',
   'needHelp'=>'Need Help?',
