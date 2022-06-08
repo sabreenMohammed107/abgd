@@ -103,7 +103,7 @@ return [
 'share_product'=>'Share Product',
 'add_cart'=>'Add to cart',
 /*-----------about-----*/
-'why_us'=>'Why Us ',
+'why_us'=>'Why Abgad?',
 
 /*-----contact page -----------------*/
 'contact_text'=>'We aim to reach you at anytime and everywhere. Your satisfaction  is our mission and your comfortability is our vision.
@@ -213,6 +213,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'phone_max'=>'Mobile number shouldn’t be greater than 11 digits.',
 'addSchool'=>'Add School',
 'dclick'=>'*double click to delete school*',
+'school_message'=>'',
 ];
 
 

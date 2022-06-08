@@ -238,14 +238,13 @@ class UsersController extends Controller
 
             }
             if (!empty($request->get('other_schools'))) {
-                foreach($request->get('other_schools') as $scol){
+                foreach ($request->get('other_schools') as $scol) {
 
                     $other_parent_school = new Other_schools_parent();
-                    $other_parent_school->user_parent_id =$user_parent->id;
+                    $other_parent_school->user_parent_id = $user_parent->id;
                     $other_parent_school->school = $scol;
                     $other_parent_school->save();
                 }
-
 
             }
             Auth::login($user);
@@ -348,15 +347,39 @@ class UsersController extends Controller
                     $user_parent->schools()->sync($request->schools);
                 }
             }
+            if (!empty($request->get('other_schools'))) {
+                //remove all old schools
+                $oldschool = Other_schools_parent::where('user_parent_id', $user_parent->id)->get();
+                if ($oldschool) {
+                    foreach ($oldschool as $old) {
+                        $old->delete();
+                    }
+                }
+//save new data
+                foreach ($request->get('other_schools') as $scol) {
+
+                    $other_parent_school = new Other_schools_parent();
+                    $other_parent_school->user_parent_id = $user_parent->id;
+                    $other_parent_school->school = $scol;
+                    $other_parent_school->save();
+                }
+
+            }
 
             Auth::login($user);
             DB::commit();
             // Enable foreign key checks!
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+            //check if no schools choose
+            if (empty($request->get('other_schools')) && empty($request->get('schools'))) {
+                return redirect()->back()->withInput()->withErrors('links.school_message');
+
+            }
+            //end check
             session()->flash('message', Lang::get('links.update_message'));
 
             // return view('web.success')->with('flash_success', Lang::get('links.update_message'));
-            return redirect()->back()->with('message',  Lang::get('links.update_message'));
+            return redirect()->back()->with('message', Lang::get('links.update_message'));
 
         } catch (\Throwable$e) {
             // throw $th;

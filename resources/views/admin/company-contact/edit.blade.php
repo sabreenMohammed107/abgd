@@ -162,6 +162,13 @@
                                    placeholder=" تليفون">
                             </div>
                         </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <label  >{{ __(' واتس اب') }}</label>
+                                    <input type="text" id="newTitle" name="whatsapp" value="{{$row->whatsapp}}" class="form-control"
+                                       placeholder=" واتس اب">
+                                </div>
+                            </div>
 
                         <div class="col-sm-6">
                             <div class="form-group">
