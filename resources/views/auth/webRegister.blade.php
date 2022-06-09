@@ -30,7 +30,7 @@ $xx = __('links.home');
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.full_name') }}</label>
-                            <input type="text" value="{{ old('full_name') }}" maxlength="70" name="full_name"
+                            <input type="text" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)" value="{{ old('full_name') }}" maxlength="70" name="full_name"
                                 class="form-control  @error('full_name') is-invalid @enderror" autofocus>
                             @error('full_name')
                                 <span class="invalid-feedback" role="alert">
@@ -55,7 +55,7 @@ $xx = __('links.home');
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.mobile') }}</label>
-                            <input type="tel" id="phone" name="phone" value="{{ old('phone') }}"
+                            <input type="tel" id="phone" maxlength="11" name="phone" value="{{ old('phone') }}"
                                 class="form-control @error('phone') is-invalid @enderror">
                             @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -100,7 +100,7 @@ $xx = __('links.home');
                             <div class="form-group">
                                 <label class="form-label ">{{ __('links.otherSchools') }}</label>
 
-                                <input type="text" class="form-control d-block" id="inSchool">
+                                <input type="text"  maxlength="70" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)" class="form-control d-block" id="inSchool" >
 
 
                             </div>
@@ -110,7 +110,7 @@ $xx = __('links.home');
 
                 <div class="mb-3">
 
-                    <button type="button" id="adscol" onclick="addSchool()" class="btn btn-dark" style="margin:0px auto;">{{ __('links.addSchool') }}
+                    <button type="button" id="adscol" onclick="addSchool()" class="btn btn-dark" style="background:#1f174c;margin:0px auto;">{{ __('links.addSchool') }}
                     </button>
 
                 </div>
@@ -146,7 +146,7 @@ $xx = __('links.home');
             {{-- end --}}
             <div class="mb-3">
                 <label class="form-label">{{ __('links.total_cost') }}</label>
-                <input type="number" id="total_cost" min="1" value="{{ old('total_cost') }}" name="total_cost"
+                <input type="number" id="total_cost" min="5000" max="99999" value="{{ old('total_cost') }}" name="total_cost"
                     class="form-control @error('total_cost') is-invalid @enderror">
                 @error('total_cost')
                     <span class="invalid-feedback" role="alert">
@@ -156,7 +156,7 @@ $xx = __('links.home');
             </div>
             <div class="mb-3">
                 <label class="form-label">{{ __('links.name') }}</label>
-                <input type="text" id="name" value="{{ old('name') }}" name="name" maxlength="15"
+                <input type="text" id="name" value="{{ old('name') }}" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)" name="name" maxlength="15"
                     class="form-control  @error('name') is-invalid @enderror">
                 @error('name')
                     <span class="invalid-feedback" role="alert">
@@ -176,7 +176,7 @@ $xx = __('links.home');
 
             <div class="mb-3">
                 <label class="form-label">{{ __('links.password') }}</label>
-                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror"
+                <input id="password" minlength="8" maxlength="15" type="password" class="form-control @error('password') is-invalid @enderror"
                     name="password" autocomplete="new-password">
             </div>
 
@@ -326,7 +326,6 @@ school : inSchool
 }
 function removeOpt(index) {
 
- alert(index);
  var x = document.getElementById("selectedshcol");
   x.remove(x.selectedIndex);
 

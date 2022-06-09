@@ -1,6 +1,6 @@
 @extends('web.layout.web')
 <?php
-$xx = __('links.profile');
+$xx = __('links.my_profile');
 ?>
 
 @section('title', '' . $xx . '')
@@ -39,8 +39,9 @@ $xx = __('links.profile');
                         <input type="hidden" name="user_parent" value="{{ $user_parent->id }}">
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.full_name') }}</label>
-                            <input type="text" value="{{ $user_parent->full_name }}" name="full_name" class="form-control"
-                                autofocus>
+                            <input type="text"
+                                onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                value="{{ $user_parent->full_name }}" name="full_name" class="form-control" autofocus>
                         </div>
                         <div>
                             <label class="form-check-label mb-2" for="exampleCheck4">{{ __('links.gender') }}</label>
@@ -60,7 +61,8 @@ $xx = __('links.profile');
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.mobile') }}</label>
-                            <input type="tel" id="phone" name="phone" value="{{ $user_parent->user->phone ?? '' }}"
+                            <input type="tel" id="phone" maxlength="11" name="phone"
+                                value="{{ $user_parent->user->phone ?? '' }}"
                                 class="form-control @error('phone') is-invalid @enderror">
                             @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -78,7 +80,7 @@ $xx = __('links.profile');
                             <select class="form-select form-control" multiple name="schools[]" style="height: 150px"
                                 aria-label="Default select example"
                                 style="background-color:white!important;border:1px solid #ced4da !important">
-                                <option>{{ __('links.select_school') }}</option>
+
                                 @foreach ($schools as $school)
                                     <option value="{{ $school->id }}"
                                         @foreach ($userSchools as $sublist) {{ $sublist->pivot->school_id == $school->id ? 'selected' : '' }} @endforeach>
@@ -96,7 +98,9 @@ $xx = __('links.profile');
                             <div class="form-group">
                                 <label class="form-label ">{{ __('links.otherSchools') }}</label>
 
-                                <input type="text" class="form-control d-block" id="inSchool">
+                                <input type="text" maxlength="70"
+                                    onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                    class="form-control d-block" id="inSchool">
 
 
                             </div>
@@ -107,7 +111,7 @@ $xx = __('links.profile');
                         <div class="mb-3">
                             <button type="button" id="adscol" @if (count($user_parent->otherSchools) >= 3) disabled @endif
                                 onclick="addSchool()" class="btn btn-dark"
-                                style="margin:0px auto;">{{ __('links.addSchool') }}
+                                style="background:#1f174c;margin:0px auto;">{{ __('links.addSchool') }}
                             </button>
 
                         </div>
@@ -147,8 +151,10 @@ $xx = __('links.profile');
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.name') }}</label>
-                            <input type="text" id="name" value="{{ $user_parent->user->name ?? '' }}" maxlength="20"
-                                name="name" class="form-control  @error('name') is-invalid @enderror">
+                            <input type="text" id="name"
+                                onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                value="{{ $user_parent->user->name ?? '' }}" maxlength="20" name="name"
+                                class="form-control  @error('name') is-invalid @enderror">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -164,8 +170,8 @@ $xx = __('links.profile');
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.confirm_password') }}</label>
-                            <input id="password-confirm" type="password" class="form-control" name="password_confirmation"
-                                autocomplete="new-password">
+                            <input id="password-confirm" placeholder="******" type="password" class="form-control"
+                                name="password_confirmation" autocomplete="new-password">
                         </div>
                         <div class="form-group mt-4 mb-4">
                             <div class="captcha">
@@ -239,6 +245,18 @@ $xx = __('links.profile');
         });
     </script>
     <script type="text/javascript">
+        //     $(document).ready(function(){
+        //     $("#inSchool").keydown(function(event){
+        //         var inputValue = event.which;
+        //         // allow letters and whitespaces only.
+
+        //         if(!(inputValue >= 65 && inputValue <= 120) && (inputValue != 32 && inputValue != 0)) {
+        //             event.preventDefault();
+        //         }
+        //     });
+        // });
+
+
         $(function() {
             $("#password").passwordStrength({
                 // The class names to give the indicator element, according to the current password strength
@@ -260,46 +278,76 @@ $xx = __('links.profile');
                 }]
             });
         });
+
         var arrschools = $('#selectedshcol').val();
 
         function addSchool() {
 
 
-            var inSchool = $('#inSchool').val();
+                var inSchool = $('#inSchool').val();
+                if(inSchool.trim().length !== 0){
+                if (arrschools) {
+                arrschools.push(inSchool);
 
-            var obj = {
+                console.table(arrschools);
+                $('#selectedshcol').empty();
 
-                value: inSchool
+                $.each(arrschools, function(index, elem) {
 
+                    // var elem = JSON.stringify(elem);
+
+                    var option = '<option selected value="' + elem + '" ondblclick="removeOpt(' + index + ')">' +
+                        elem + '</option>'
+
+                    $('#selectedshcol').append(option);
+                    $('#inSchool').val('');
+                    if (index == 2) {
+                        $('#adscol').prop('disabled', true);
+                    } else {
+                        $('#adscol').prop('disabled', false);
+                    }
+
+                })
+
+                console.table(inSchool);
+
+            } else {
+                arrschools = [];
+                var inSchool = $('#inSchool').val();
+
+                // var obj = {
+
+                //     school: inSchool
+
+                // }
+                arrschools.push(inSchool);
+
+                console.table(arrschools);
+                $('#selectedshcol').empty();
+
+                $.each(arrschools, function(index, elem) {
+
+                    // var elem = JSON.stringify(elem);
+
+                    var option = '<option selected value="' + elem + '" ondblclick="removeOpt(' + index +
+                        ')">' + elem + '</option>'
+
+                    $('#selectedshcol').append(option);
+                    $('#inSchool').val('');
+                    if (index == 2) {
+                        $('#adscol').prop('disabled', true);
+                    } else {
+                        $('#adscol').prop('disabled', false);
+                    }
+
+                })
             }
-            arrschools.push(inSchool);
-
-            console.table(arrschools);
 
 
 
 
-            $('#selectedshcol').empty();
+        }
 
-            $.each(arrschools, function(index, elem) {
-
-                // var elem = JSON.stringify(elem);
-
-                var option = '<option selected value="' + elem + '" ondblclick="removeOpt(' + index + ')">' +
-                    elem + '</option>'
-
-                $('#selectedshcol').append(option);
-                if (index == 2) {
-                    $('#adscol').prop('disabled', true);
-                } else {
-                    $('#adscol').prop('disabled', false);
-                }
-
-            })
-
-            console.table(inSchool);
-
-            console.table(arrschools);
 
         }
 

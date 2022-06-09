@@ -181,7 +181,7 @@ class UsersController extends Controller
             'name' => ['required', 'unique:users'],
             'child_no' => 'required',
             'total_cost' => 'required',
-            'password' => ['same:confirm-password', 'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
+            'password' => ['required', 'same:confirm-password', 'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
             'captcha' => 'required|captcha',
 
         ], [
@@ -196,6 +196,7 @@ class UsersController extends Controller
             'total_cost.required' => Lang::get('links.fees_required'),
             'name.required' => Lang::get('links.name_required'),
             'name.unique' => Lang::get('links.name_unique'),
+            'password.required' => Lang::get('links.passwordLogin'),
             'password.regex' => Lang::get('links.password_regex'),
             'password.same' => Lang::get('links.password_same'),
             'captcha.required' => Lang::get('links.captcha_required'),
@@ -325,7 +326,12 @@ class UsersController extends Controller
             // }
 
             $user = User::find($user_parent->user_id);
+            //check if no schools choose
+            if (empty($request->get('other_schools')) && empty($request->get('schools'))) {
+                return redirect()->back()->withInput()->withErrors('links.school_message');
 
+            }
+//end check
             $user->update($input);
             // dd($user);
             $parent = [
@@ -370,12 +376,7 @@ class UsersController extends Controller
             DB::commit();
             // Enable foreign key checks!
             DB::statement('SET FOREIGN_KEY_CHECKS=1;');
-            //check if no schools choose
-            if (empty($request->get('other_schools')) && empty($request->get('schools'))) {
-                return redirect()->back()->withInput()->withErrors('links.school_message');
 
-            }
-            //end check
             session()->flash('message', Lang::get('links.update_message'));
 
             // return view('web.success')->with('flash_success', Lang::get('links.update_message'));

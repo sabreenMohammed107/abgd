@@ -8,7 +8,7 @@
                     <a class="footer-button" href=" {{ LaravelLocalization::localizeUrl('/') }}#about-sec"> {{ __('links.about_us') }}</a>
                     <a class="footer-button" href=" {{ LaravelLocalization::localizeUrl('/') }}#why-us">{{ __('links.why_us') }}</a>
                     <a class="footer-button" href=" {{ LaravelLocalization::localizeUrl('/') }}#how-sec"> {{ __('links.how_register') }}</a>
-                    <a class="footer-button" href="{{ LaravelLocalization::localizeUrl('/faq') }}">{{ __('links.faq') }}</a>
+                    {{-- <a class="footer-button" href="{{ LaravelLocalization::localizeUrl('/faq') }}">{{ __('links.faq') }}</a> --}}
                     <a class="footer-button" href=" {{ LaravelLocalization::localizeUrl('/') }}#contact-sec">{{ __('links.contact_us') }}</a>
 
                     @foreach (LaravelLocalization::getSupportedLocales() as $localeCode => $properties)

@@ -55,7 +55,7 @@
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 
-                                {{ __('links.welcome') }} {{ strip_tags(str_limit(Auth::user()->name ?? '', $limit = 16, $end = '')) }}
+                                {{ __('links.welcome') }} {{ strip_tags(str_limit(Auth::user()->name ?? '', $limit = 15, $end = '')) }}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="{{ route('user-profile', Auth::user()->id) }}"> <i class="fa fa-user mr-2"></i> {{ __('links.my_profile') }} </a>
@@ -131,7 +131,8 @@
                                 <div style="position:relative">
                                     <img class="slider-img"
                                         src="{{ asset('uploads/sliders') }}/{{ $slider->image }}" alt="{{ $slider->image }}">
-                                    <div class="slider-tag">
+                                   @if(empty($slider->title_en) && empty($slider->title_ar) && empty($slider->text_en) && empty($slider->text_ar))
+                                        <div class="slider-tag">
                                         <h6>
                                             @if (LaravelLocalization::getCurrentLocale() === 'en')
                                                 {!! $slider->title_en !!}
@@ -147,6 +148,7 @@
                                             @endif
                                         </p>
                                     </div>
+
                                     <div class="slider-tag tag2">
                                         <h6>
                                             @if (LaravelLocalization::getCurrentLocale() === 'en')
@@ -163,6 +165,7 @@
                                             @endif
                                         </p>
                                     </div>
+                                    @endif
                                 </div>
                             </div>
                         @endforeach
