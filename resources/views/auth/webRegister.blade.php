@@ -178,12 +178,17 @@ $xx = __('links.home');
                 <label class="form-label">{{ __('links.password') }}</label>
                 <input id="password"  maxlength="15" type="password" class="form-control @error('password') is-invalid @enderror"
                     name="password" autocomplete="new-password">
-            </div>
+                    @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror            </div>
 
             <div class="mb-3">
                 <label class="form-label">{{ __('links.confirm_password') }}</label>
-                <input id="password-confirm" type="password" class="form-control" name="confirm-password"
+                <input id="password-confirm" type="password" class="form-control  " name="confirm-password"
                     autocomplete="new-password">
+
             </div>
             <div class="form-group mt-4 mb-4">
                 <div class="captcha">
