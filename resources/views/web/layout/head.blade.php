@@ -36,6 +36,7 @@
 	<link href="{{ asset('webassets/css/style.css')}}" rel="stylesheet" />
 
     <style type="text/css" rel="stylesheet">
+    .clients-sec{display:none}
         #page
         {
             margin: auto;
