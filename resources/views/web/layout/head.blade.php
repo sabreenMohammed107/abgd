@@ -36,6 +36,14 @@
 	<link href="{{ asset('webassets/css/style.css')}}" rel="stylesheet" />
 
     <style type="text/css" rel="stylesheet">
+    .why-us .why-block .why-text {
+    padding: 10px 20px;
+    text-align: center;
+    min-height: 200px;
+}
+.h3, h3 {
+    font-size: 1.55rem;
+}
     .clients-sec{display:none}
         #page
         {
