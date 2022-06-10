@@ -203,7 +203,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'passwordLogin'=>'Password is Required',
 'password_min'=>'Password less than 8 characters',
 'password_max'=>'Password more than 15 characters',
-'invalid_msg'=>'Invalid UserName  / Password',
+'invalid_msg'=>'Invalid UserName / Mobile Number or Password',
 'fullname_required'=>'FullName is Required',
 'fees_required'=>'Total Fees is Required',
 'childNo_required'=>'Children Count is Required',

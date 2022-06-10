@@ -120,7 +120,8 @@ class UsersController extends Controller
 
             if ($validatorr->fails()) {
                 return redirect()->back()->withInput()
-                    ->withErrors($validatorr->messages());
+                ->withErrors(Lang::get('links.invalid_msg'));
+
 
             }
 
@@ -285,7 +286,8 @@ class UsersController extends Controller
             'total_cost' => 'required',
             // "other_schools" =>"required_without:schools",
             "schools" =>"required_without:other_schools",
-            'password' => 'nullable|required_with:confirmed|min:8|regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/,',
+
+            'password' => ['required_with:confirmed', 'nullable', 'min:8', 'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
             'name' => 'required|unique:users,name,' . $user_parent->user_id,
             // 'password' => 'confirmed',
             'captcha' => 'required|captcha',

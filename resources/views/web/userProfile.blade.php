@@ -167,6 +167,11 @@ $xx = __('links.my_profile');
                             <input id="password" maxlength="15" type="password" placeholder="******"
                                 class="form-control @error('password') is-invalid @enderror" name="password"
                                 autocomplete="new-password">
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.confirm_password') }}</label>
