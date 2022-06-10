@@ -33,92 +33,92 @@ class SchoolSeeder extends Seeder
 // Sakkara Language School
     protected $schools = [
         [
-            'name_ar' => 'Brandon',
-            'name_en' => ' Aspire International School',
+            'name_ar' => 'Aspire International School',
+            'name_en' => 'Aspire International School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Brilliance Language School',
             'name_en' => 'Brilliance Language School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Capital School',
             'name_en' => 'Capital School',
 
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Continental Palace International School',
             'name_en' => 'Continental Palace International School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Dome International School (DIS)',
             'name_en' => 'Dome International School (DIS)',
 
         ],
 
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => ' El Gouna International School (EGIS)',
             'name_en' => '  El Gouna International School (EGIS)',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Elite Language School',
             'name_en' => 'Elite Language School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Future International School',
             'name_en' => 'Future International School',
 
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Gateway International School',
             'name_en' => 'Gateway International School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'GEMS British International School-Madinty',
             'name_en' => 'GEMS British International School-Madinty',
 
         ],
        [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'GEMS British School-Al Rehab',
             'name_en' => ' GEMS British School-Al Rehab',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Glory Language School',
             'name_en' => 'Glory Language School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Kaumeya Language School',
             'name_en' => 'Kaumeya Language School',
 
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Knowledge Language School',
             'name_en' => 'Knowledge Language School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Madinty Integrated Language Schools (MILS)',
             'name_en' => 'Madinty Integrated Language Schools (MILS)',
 
         ],
 
  [
-            'name_ar' => 'Brandon',
+            'name_ar' => ' Madinty Language School',
             'name_en' => ' Madinty Language School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Metropolitan School',
             'name_en' => 'Metropolitan School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'New Sunrise International School',
             'name_en' => 'New Sunrise International School',
 
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'New Vision International School',
             'name_en' => 'New Vision International School',
         ],
         [
-            'name_ar' => 'Brandon',
+            'name_ar' => 'Sakkara Language School',
             'name_en' => 'Sakkara Language School',
 
         ],
