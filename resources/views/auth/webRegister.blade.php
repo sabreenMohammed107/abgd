@@ -30,7 +30,9 @@ $xx = __('links.home');
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.full_name') }}</label>
-                            <input type="text" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)" value="{{ old('full_name') }}" maxlength="70" name="full_name"
+                            <input type="text"
+                                onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                value="{{ old('full_name') }}" maxlength="70" name="full_name"
                                 class="form-control  @error('full_name') is-invalid @enderror" autofocus>
                             @error('full_name')
                                 <span class="invalid-feedback" role="alert">
@@ -100,7 +102,9 @@ $xx = __('links.home');
                             <div class="form-group">
                                 <label class="form-label ">{{ __('links.otherSchools') }}</label>
 
-                                <input type="text"  maxlength="70" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)" class="form-control d-block" id="inSchool" >
+                                <input type="text" maxlength="70"
+                                    onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                    class="form-control d-block" id="inSchool">
 
 
                             </div>
@@ -108,63 +112,71 @@ $xx = __('links.home');
                         </div>
 
 
-                <div class="mb-3">
+                        <div class="mb-3">
 
-                    <button type="button" id="adscol" onclick="addSchool()" class="btn btn-dark" style="background:#1f174c;margin:0px auto;">{{ __('links.addSchool') }}
-                    </button>
+                            <button type="button" id="adscol" @if (count(collect(old('other_schools'))) >= 3) disabled @endif onclick="addSchool()" class="btn btn-dark"
+                                style="background:#1f174c;margin:0px auto;">{{ __('links.addSchool') }}
+                            </button>
 
-                </div>
+                        </div>
 
-                <h6>{{ __('links.dclick') }}</h6>
-
-
-
-                <div class="form-group">
-
-                    <select name="other_schools[]" multiple class="form-control select-multiple" id="selectedshcol">
-
-                        {{-- <option disabled value=""> أيام المجموعات </option> --}}
-
-                    </select>
-
-                </div>
-
-
-            <div class="w-100 my-1" id="added">
+                        <h6>{{ __('links.dclick') }}</h6>
 
 
 
+                        <div class="form-group">
+
+
+
+                            <select name="other_schools[]" multiple class="form-control select-multiple" id="selectedshcol">
+
+                                @foreach (collect(old('other_schools')) as $index=>$option)
+                                <option value="{{ $option }}" ondblclick="removeOpt({{$index}})" selected>
+                                    {{ $option }}</option>
+                            @endforeach
+
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="w-100 my-1" id="added">
 
 
 
 
 
 
-            </div>
 
-            <!--  /Add Round days and times -->
-            {{-- end --}}
-            <div class="mb-3">
-                <label class="form-label">{{ __('links.total_cost') }}</label>
-                <input type="number" id="total_cost" min="5000" max="99999" value="{{ old('total_cost') }}" name="total_cost"
-                    class="form-control @error('total_cost') is-invalid @enderror">
-                @error('total_cost')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <label class="form-label">{{ __('links.name') }}</label>
-                <input type="text" id="name" value="{{ old('name') }}" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)" name="name" maxlength="15"
-                    class="form-control  @error('name') is-invalid @enderror">
-                @error('name')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            {{-- <div class="mb-3">
+
+
+                        </div>
+
+                        <!--  /Add Round days and times -->
+                        {{-- end --}}
+                        <div class="mb-3">
+                            <label class="form-label">{{ __('links.total_cost') }}</label>
+                            <input type="number" id="total_cost" min="5000" max="50000" value="{{ old('total_cost') }}"
+                                name="total_cost" class="form-control @error('total_cost') is-invalid @enderror">
+                            @error('total_cost')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ __('links.name') }}</label>
+                            <input type="text" id="name" value="{{ old('name') }}"
+                                onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                name="name" maxlength="15" class="form-control  @error('name') is-invalid @enderror">
+                            @error('name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        {{-- <div class="mb-3">
                         <label class="form-label">{{ __('links.email') }}</label>
                         <input type="text" value="{{old('email')}}" name="email" class="form-control @error('email') is-invalid @enderror">
                         @error('email')
@@ -174,48 +186,50 @@ $xx = __('links.home');
                     @enderror
                     </div> --}}
 
-            <div class="mb-3">
-                <label class="form-label">{{ __('links.password') }}</label>
-                <input id="password"  maxlength="15" type="password" class="form-control @error('password') is-invalid @enderror"
-                    name="password" autocomplete="new-password">
-                    @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror            </div>
+                        <div class="mb-3">
+                            <label class="form-label">{{ __('links.password') }}</label>
+                            <input id="password" maxlength="15" type="password"
+                                class="form-control @error('password') is-invalid @enderror" name="password"
+                                autocomplete="new-password">
+                            @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
 
-            <div class="mb-3">
-                <label class="form-label">{{ __('links.confirm_password') }}</label>
-                <input id="password-confirm" type="password" class="form-control  " name="confirm-password"
-                    autocomplete="new-password">
+                        <div class="mb-3">
+                            <label class="form-label">{{ __('links.confirm_password') }}</label>
+                            <input id="password-confirm" type="password" class="form-control  " name="confirm-password"
+                                autocomplete="new-password">
 
-            </div>
-            <div class="form-group mt-4 mb-4">
-                <div class="captcha">
-                    <span>{!! captcha_img() !!}</span>
-                    <button type="button" class="btn btn-danger" class="reload" id="reload">
-                        &#x21bb;
-                    </button>
+                        </div>
+                        <div class="form-group mt-4 mb-4">
+                            <div class="captcha">
+                                <span>{!! captcha_img() !!}</span>
+                                <button type="button" class="btn btn-danger" class="reload" id="reload">
+                                    &#x21bb;
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group mb-4">
+                            <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror"
+                                placeholder="{{ __('links.enter_captcha') }}" name="captcha">
+                            @error('captcha')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <button type="submit" class="btn btn-primary btn-contact">{{ __('links.register') }}</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <img src="{{ asset('webassets/imgs/18.png') }}" style="max-width:100%;height:400px" />
                 </div>
             </div>
-            <div class="form-group mb-4">
-                <input id="captcha" type="text" class="form-control @error('captcha') is-invalid @enderror"
-                    placeholder="{{ __('links.enter_captcha') }}" name="captcha">
-                @error('captcha')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-            </div>
-            <div class="mb-3">
-                <button type="submit" class="btn btn-primary btn-contact">{{ __('links.register') }}</button>
-            </div>
-            </form>
-        </div>
-        <div class="col-lg-6 col-md-12">
-            <img src="{{ asset('webassets/imgs/18.png') }}" style="max-width:100%;height:400px" />
-        </div>
-        </div>
         </div>
     </section>
 
@@ -258,7 +272,7 @@ $xx = __('links.home');
         document.getElementById("total_cost").addEventListener("change", function() {
             let v = parseInt(this.value);
             if (v < 5000) this.value = 5000;
-            if (v > 99999) this.value = 99999;
+            if (v > 50000) this.value = 50000;
 
         });
     </script>
@@ -267,13 +281,13 @@ $xx = __('links.home');
             $("#password").passwordStrength({
                 $indicator: undefined,
                 rules: {
-   Message: {
-      required: false,
-      maxlength :false,
+                    Message: {
+                        required: false,
+                        maxlength: false,
 
-   }
-},
-errorMessages:false,
+                    }
+                },
+                errorMessages: false,
                 // The class names to give the indicator element, according to the current password strength
                 strengthClassNames: [{
                     name: "very-weak",
@@ -295,79 +309,113 @@ errorMessages:false,
         });
 
 
-
-        var arrschools = [];
-
-
-function addSchool() {
+        var arrschools = $('#selectedshcol').val();
 
 
-
-  var inSchool = $('#inSchool').val();
-
-  var obj = {
-
-school : inSchool
-
-}
-  arrschools.push(obj);
-
-  console.table(arrschools);
+        function addSchool() {
 
 
+            var inSchool = $('#inSchool').val();
+            if (inSchool.trim().length !== 0) {
+                if (arrschools) {
+                    arrschools.push(inSchool);
 
+                    console.table(arrschools);
+                    $('#selectedshcol').empty();
 
-  $('#selectedshcol').empty();
+                    $.each(arrschools, function(index, elem) {
 
-  $.each(arrschools,function(index,elem){
+                        // var elem = JSON.stringify(elem);
 
-    // var elem = JSON.stringify(elem);
+                        var option = '<option selected value="' + elem + '" ondblclick="removeOpt(' + index +
+                            ')">' +
+                            elem + '</option>'
 
-    var option = '<option selected value="'+elem.school+'" ondblclick="removeOpt('+ index + ')">' + elem.school  + '</option>'
+                        $('#selectedshcol').append(option);
+                        $('#inSchool').val('');
+                        if (index == 2) {
+                            $('#adscol').prop('disabled', true);
+                        } else {
+                            $('#adscol').prop('disabled', false);
+                        }
 
-    $('#selectedshcol').append(option);
-    if(index==2){
-        $('#adscol').prop('disabled', true);
-    }else{
-        $('#adscol').prop('disabled', false);
-    }
+                    })
 
-  })
+                    console.table(inSchool);
 
-  console.table(inSchool);
+                } else {
+                    arrschools = [];
+                    var inSchool = $('#inSchool').val();
 
-  console.table(arrschools);
+                    // var obj = {
 
-}
-function removeOpt(index) {
+                    //     school: inSchool
 
- var x = document.getElementById("selectedshcol");
-  x.remove(x.selectedIndex);
+                    // }
+                    arrschools.push(inSchool);
 
-// $('#selectedshcol option')[index].remove();
+                    console.table(arrschools);
+                    $('#selectedshcol').empty();
 
-arrschools.splice(index,1);
-// arrschools.remove(index);
+                    $.each(arrschools, function(index, elem) {
 
- $('#selectedshcol').empty();
+                        // var elem = JSON.stringify(elem);
 
-$.each(arrschools,function(index,elem){
+                        var option = '<option selected value="' + elem + '" ondblclick="removeOpt(' + index +
+                            ')">' + elem + '</option>'
 
-  // var elem = JSON.stringify(elem);
+                        $('#selectedshcol').append(option);
+                        $('#inSchool').val('');
+                        if (index == 2) {
+                            $('#adscol').prop('disabled', true);
+                        } else {
+                            $('#adscol').prop('disabled', false);
+                        }
 
-  var option = '<option selected value="'+elem.school+'" ondblclick="removeOpt('+ index + ')">' + elem.school  + '</option>'
-
-  $('#selectedshcol').append(option);
-  if(index==2){
-        $('#adscol').prop('disabled', true);
-    }else{
-        $('#adscol').prop('disabled', false);
-    }
-
-})
+                    })
+                }
 
 
 
-}
+
+            }
+
+
+        }
+
+
+
+
+        function removeOpt(index) {
+
+            var x = document.getElementById("selectedshcol");
+            x.remove(x.selectedIndex);
+
+            // $('#selectedshcol option')[index].remove();
+
+            arrschools.splice(index, 1);
+            // arrschools.remove(index);
+
+            $('#selectedshcol').empty();
+
+            $.each(arrschools, function(index, elem) {
+
+                // var elem = JSON.stringify(elem);
+
+                var option = '<option selected value="' + elem + '" ondblclick="removeOpt(' + index + ')">' +
+                    elem + '</option>'
+
+                $('#selectedshcol').append(option);
+                if (index == 2) {
+                    $('#adscol').prop('disabled', true);
+                } else {
+                    $('#adscol').prop('disabled', false);
+                }
+
+            })
+
+
+
+        }
     </script>
 @endsection

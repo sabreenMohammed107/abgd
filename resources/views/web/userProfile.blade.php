@@ -146,7 +146,7 @@ $xx = __('links.my_profile');
                         </div>
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.total_cost') }}</label>
-                            <input type="number" id="total_cost" min="1" value="{{ $user_parent->total_cost }}"
+                            <input type="number" id="total_cost" min="5000" max="50000" value="{{ $user_parent->total_cost }}"
                                 name="total_cost" class="form-control">
                         </div>
                         <div class="mb-3">
@@ -241,7 +241,7 @@ $xx = __('links.my_profile');
         document.getElementById("total_cost").addEventListener("change", function() {
             let v = parseInt(this.value);
             if (v < 5000) this.value = 5000;
-            if (v > 99999) this.value = 99999;
+            if (v > 50000) this.value = 50000;
 
         });
     </script>

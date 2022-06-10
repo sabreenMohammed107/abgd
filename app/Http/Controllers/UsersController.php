@@ -183,7 +183,7 @@ class UsersController extends Controller
             'total_cost' => 'required',
             // "other_schools" =>"required_without:schools",
             "schools" =>"required_without:other_schools",
-            'password' => ['required', 'same:confirm-password', 'regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
+            'password' => ['required', 'same:confirm-password', 'min:8','regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
             'captcha' => 'required|captcha',
 
         ], [
@@ -202,12 +202,12 @@ class UsersController extends Controller
             'name.required' => Lang::get('links.name_required'),
             'password.required' => Lang::get('links.passwordLogin'),
             'password.regex' => Lang::get('links.password_regex'),
+            'password.min' => Lang::get('links.password_min'),
             'password.same' => Lang::get('links.password_same'),
             'captcha.required' => Lang::get('links.captcha_required'),
             'captcha.captcha' => Lang::get('links.captcha_captcha'),
 
         ]);
-
         if ($validator->fails()) {
 
             return redirect()->back()->withInput()
@@ -283,11 +283,11 @@ class UsersController extends Controller
             'phone' => 'required|min:11|max:11|regex:/(01)[0-2,5]{1}[0-9]{8}/|unique:users,phone,' . $user_parent->user_id,
             'child_no' => 'required',
             'total_cost' => 'required',
-            "other_schools" =>"required_without:schools",
+            // "other_schools" =>"required_without:schools",
             "schools" =>"required_without:other_schools",
-            'password' => ['regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
+            'password' => 'nullable|required_with:confirmed|min:8|regex:/^(?=.*[a-z|A-Z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/,',
             'name' => 'required|unique:users,name,' . $user_parent->user_id,
-            'password' => 'confirmed',
+            // 'password' => 'confirmed',
             'captcha' => 'required|captcha',
 
 
@@ -299,12 +299,13 @@ class UsersController extends Controller
             'phone.min' => Lang::get('links.phone_regex'),
             'child_no.required' => Lang::get('links.childNo_required'),
             'total_cost.required' => Lang::get('links.fees_required'),
-            'other_schools.required_without' => Lang::get('links.school_message'),
+            // 'other_schools.required_without' => Lang::get('links.school_message'),
             'schools.required_without' => Lang::get('links.school_message'),
             'name.required' => Lang::get('links.name_required'),
             'name.unique' => Lang::get('links.name_unique'),
             'password.regex' => Lang::get('links.password_regex'),
             'password.confirmed' => Lang::get('links.password_same'),
+            'password.min' => Lang::get('links.password_min'),
             'captcha.required' => Lang::get('links.captcha_required'),
             'captcha.captcha' => Lang::get('links.captcha_captcha'),
 
