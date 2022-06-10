@@ -177,6 +177,6 @@ $(function() {
             return methods.init.apply(this, arguments);
         }
 
-        $.error("Method " +  method + " does not exist on jQuery.passwordStrength");
+        $.error("Method " + method + " does not exist on jQuery.passwordStrength");
     };
 });

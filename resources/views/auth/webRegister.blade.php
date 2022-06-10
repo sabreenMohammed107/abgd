@@ -176,7 +176,7 @@ $xx = __('links.home');
 
             <div class="mb-3">
                 <label class="form-label">{{ __('links.password') }}</label>
-                <input id="password" minlength="8" maxlength="15" type="password" class="form-control @error('password') is-invalid @enderror"
+                <input id="password"  maxlength="15" type="password" class="form-control @error('password') is-invalid @enderror"
                     name="password" autocomplete="new-password">
             </div>
 
@@ -252,13 +252,23 @@ $xx = __('links.home');
 
         document.getElementById("total_cost").addEventListener("change", function() {
             let v = parseInt(this.value);
-            if (v < 1) this.value = 1;
+            if (v < 5000) this.value = 5000;
+            if (v > 99999) this.value = 99999;
 
         });
     </script>
     <script type="text/javascript">
         $(function() {
             $("#password").passwordStrength({
+                $indicator: undefined,
+                rules: {
+   Message: {
+      required: false,
+      maxlength :false,
+
+   }
+},
+errorMessages:false,
                 // The class names to give the indicator element, according to the current password strength
                 strengthClassNames: [{
                     name: "very-weak",

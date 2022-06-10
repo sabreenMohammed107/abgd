@@ -164,7 +164,7 @@ $xx = __('links.my_profile');
 
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.password') }}</label>
-                            <input id="password" type="password" placeholder="******"
+                            <input id="password" maxlength="15" type="password" placeholder="******"
                                 class="form-control @error('password') is-invalid @enderror" name="password"
                                 autocomplete="new-password">
                         </div>
@@ -240,7 +240,8 @@ $xx = __('links.my_profile');
         });
         document.getElementById("total_cost").addEventListener("change", function() {
             let v = parseInt(this.value);
-            if (v < 1) this.value = 1;
+            if (v < 5000) this.value = 5000;
+            if (v > 99999) this.value = 99999;
 
         });
     </script>
