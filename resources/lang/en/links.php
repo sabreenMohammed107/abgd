@@ -193,7 +193,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 
 // validate messages
 'userMobileLgoin'=>'UserName /Mobile number is required ',
-'name_required'=>'UserName is Required',
+'name_required'=>'UserName is required',
 'name_unique'=>'UserName  already exists',
 'phone_unique'=>'Mobile Number already exists',
 'phone_required'=>'Mobile Number is required',
