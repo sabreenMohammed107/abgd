@@ -180,7 +180,7 @@ class UsersController extends Controller
         $validator = Validator::make($request->all(), [
             'full_name' => 'required',
             'phone' => ['required', 'min:11', 'max:11', 'regex:/(01)[0-2,5]{1}[0-9]{8}/', 'unique:users'],
-            'name' => ['required', 'unique:users', 'regex:/^(?!.*[@$!%*#?&])(?=.*[\sa-zA-Zء-ي])+[^\.]*$/'],
+            'name' => ['required', 'unique:users', 'regex:/^(?!.*[@$!%*#?&-.\/_])(?=.*[\sa-zA-Zء-ي])+[^\.]*$/'],
             'child_no' => 'required',
             'total_cost' => 'required',
             // "other_schools" =>"required_without:schools",
