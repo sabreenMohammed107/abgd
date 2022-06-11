@@ -356,7 +356,12 @@ $xx= __('links.home')
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
-                                <input type="email" class="form-control" value="{{ old('email') }}" name="email" placeholder=" {{ __('links.email') }}">
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" value="{{ old('email') }}" name="email" placeholder=" {{ __('links.email') }}">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">
