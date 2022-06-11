@@ -6,19 +6,20 @@ $xx = __('links.my_profile');
 @section('title', '' . $xx . '')
 
 @section('content')
-    @if (session()->has('message'))
-        <div class="alert alert-success"
-            @if (LaravelLocalization::getCurrentLocale() === 'en') style="text-align: left"
-                        @else
 
-                        style="text-align: right" @endif>
-            {{ session()->get('message') }}
-        </div>
-    @endif
     <section class="login-sec pt-5 pb-5 mb-5 ">
         <div class="container">
             <div class="row dir">
                 <div class="col-lg-6 col-md-12">
+                    @if (session()->has('message'))
+                    <div class="alert alert-success alert-dismissible fade show"
+                        @if (LaravelLocalization::getCurrentLocale() === 'en') style="text-align: left"
+                                    @else
+
+                                    style="text-align: right" @endif>
+                        {{ session()->get('message') }}
+                    </div>
+                @endif
                     <h2>{{ __('links.my_profile') }}</h2>
 
                     @if (count($errors) > 0)
