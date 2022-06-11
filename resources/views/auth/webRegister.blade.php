@@ -168,7 +168,7 @@ $xx = __('links.home');
                         <div class="mb-3">
                             <label class="form-label">{{ __('links.name') }}</label>
                             <input type="text" id="name" value="{{ old('name') }}"
-                                onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                            onkeypress="return /^(?:[a-zA-Z0-9\s@,=%$#&_\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDCF\uFDF0-\uFDFF\uFE70-\uFEFF]|(?:\uD802[\uDE60-\uDE9F]|\uD83B[\uDE00-\uDEFF])){0,30}$/u.test(event.key)"
                                 name="name" maxlength="15" class="form-control  @error('name') is-invalid @enderror">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
@@ -177,6 +177,8 @@ $xx = __('links.home');
                             @enderror
                         </div>
                         {{-- <div class="mb-3">
+                             onkeypress="return /^(?:[a-zA-Z0-9\s@,=%$#&_\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDCF\uFDF0-\uFDFF\uFE70-\uFEFF]|(?:\uD802[\uDE60-\uDE9F]|\uD83B[\uDE00-\uDEFF])){0,30}$/u.test(event.key)"
+                             onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
                         <label class="form-label">{{ __('links.email') }}</label>
                         <input type="text" value="{{old('email')}}" name="email" class="form-control @error('email') is-invalid @enderror">
                         @error('email')

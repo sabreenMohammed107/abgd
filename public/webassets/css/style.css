@@ -1478,7 +1478,8 @@ button.navbar-toggler {
     color: transparent;
 }
 
-.navbar-collapse {
+
+/* .navbar-collapse {
     position: absolute;
     top: 80px;
     z-index: 10;
@@ -1486,4 +1487,4 @@ button.navbar-toggler {
     background: #fff;
     left: 0px;
     padding-left: 25px;
-}
+} */

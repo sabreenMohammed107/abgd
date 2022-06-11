@@ -83,9 +83,11 @@ class UsersController extends Controller
 
         if (is_numeric($identifier)) {
 
-            return 0;
+            // return 0;
+            dd(0);
         }
-        return 1;
+        // return 1;
+        dd(1);
     }
     public function saveLogin(Request $request)
     {
