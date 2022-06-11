@@ -41,6 +41,20 @@
     text-align: center;
     min-height: 200px;
 }
+button.close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    padding: 0.75rem 1.25rem;
+    color: inherit;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #fff;
+    opacity: .5;
+    border: 0;
+    background-color: transparent;
+    font-size: 1.5rem;
+}
 .h3, h3 {
     font-size: 1.55rem;
 }

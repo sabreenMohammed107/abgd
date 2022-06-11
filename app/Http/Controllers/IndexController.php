@@ -10,6 +10,7 @@ use App\Models\Sender_type;
 use App\Models\Why_us;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Lang as Lang;
+use Validator;
 class IndexController extends Controller
 {
     protected $viewName = 'web.';
@@ -34,6 +35,31 @@ class IndexController extends Controller
 
 
     public function sendMessage(Request $request){
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'mobile' => ['required', 'min:11', 'max:11', 'regex:/(01)[0-2,5]{1}[0-9]{8}/'],
+
+            'message' => 'required',
+            'email' => 'required',
+
+        ], [
+
+            'name.required' => Lang::get('links.fullname_required'),
+
+            'mobile.required' => Lang::get('links.phone_required'),
+            'mobile.regex' => Lang::get('links.phone_regex'),
+            'mobile.max' => Lang::get('links.phone_max'),
+            'mobile.min' => Lang::get('links.phone_regex'),
+            'message.required' => Lang::get('links.message_required'),
+            'email.required' => Lang::get('links.email_required'),
+
+        ]);
+        if ($validator->fails()) {
+
+            return redirect()->back()->withInput()
+                ->withErrors($validator->messages());
+
+        }
         Message::create($request->except('_token'));
         // session()->flash('success', Lang::get('links.controller_message'));
 

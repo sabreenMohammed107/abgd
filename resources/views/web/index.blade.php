@@ -309,8 +309,26 @@ $xx= __('links.home')
                 @csrf
                     <div class="row">
                         <div class="col-lg-6 col-md-12">
+                            {{-- @if (count($errors) > 0)
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <button type="button" class="btn-close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                                <ul class="p-0 m-0" style="list-style: none;">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif --}}
                             <div class="mb-3">
-                                <input type="text" class="form-control"  name="name"  placeholder="{{ __('links.name') }}">
+                                <input type="text" value="{{ old('name') }}" class="form-control @error('name') is-invalid @enderror" maxlength="70" onkeypress="return /^(?:(?=[\p{Script=Arabic}A-Za-z])\p{L}|\s)+$/u.test(event.key)"
+                                  name="name"  placeholder="{{ __('links.full_name') }}">
+                                  @error('name')
+                                  <span class="invalid-feedback" role="alert">
+                                      <strong>{{ $message }}</strong>
+                                  </span>
+                              @enderror
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
@@ -327,17 +345,28 @@ $xx= __('links.home')
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
-                                <input type="tel" class="form-control" required name="mobile"  placeholder=" {{ __('links.phone') }}">
+                                <input type="tel" maxlength="11"  name="mobile"  value="{{ old('mobile') }}"
+                                class="form-control @error('mobile') is-invalid @enderror" placeholder=" {{ __('links.phone') }}">
+                                @error('mobile')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             </div>
                         </div>
                         <div class="col-lg-6 col-md-12">
                             <div class="mb-3">
-                                <input type="email" class="form-control" name="email" placeholder=" {{ __('links.email') }}">
+                                <input type="email" class="form-control" value="{{ old('email') }}" name="email" placeholder=" {{ __('links.email') }}">
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">
                             <div class="mb-3">
-                                <textarea class="form-control" required name="message" rows="9" placeholder="{{ __('links.message') }}"></textarea>
+                                <textarea class="form-control @error('message') is-invalid @enderror"  name="message" rows="9" placeholder="{{ __('links.message') }}">{{ old('message') }}</textarea>
+                                @error('message')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                             </div>
                         </div>
                         <div class="col-lg-12 col-md-12">

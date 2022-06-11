@@ -214,6 +214,8 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'addSchool'=>'Add School',
 'dclick'=>'*double click to delete school*',
 'school_message'=>'School name or other schools field  is required',
+'message_required'=>'Message is required',
+'email_required'=>'ُEmail is required',
 ];
 
 

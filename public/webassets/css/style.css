@@ -37,7 +37,8 @@ body {
 }
 
 .fa-bars {
-    color: #007bff;
+    /* color: #007bff; */
+    color: #e36a2c;
     font-size: 30px;
 }
 
@@ -239,7 +240,8 @@ body {
         border-bottom-right-radius: 5rem;
     }
     .about-sec {
-        padding-top: 100px !important;
+        /* padding-top: 100px !important; */
+        padding-top: 0px !important;
     }
 }
 
@@ -1179,7 +1181,8 @@ select {
         padding: 10px 0;
     }
     .login-sec {
-        margin-top: 250px;
+        /* margin-top: 250px; */
+        margin-top: 28%;
     }
     .navbar .nav-link {
         color: #1e174b;
@@ -1466,4 +1469,21 @@ a:focus {
 
 a#button {
     color: #4c3bb7;
+}
+
+
+/* Rania */
+
+button.navbar-toggler {
+    color: transparent;
+}
+
+.navbar-collapse {
+    position: absolute;
+    top: 80px;
+    z-index: 10;
+    width: 100%;
+    background: #fff;
+    left: 0px;
+    padding-left: 25px;
 }

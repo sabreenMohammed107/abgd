@@ -13,10 +13,12 @@ $xx = __('links.my_profile');
                 <div class="col-lg-6 col-md-12">
                     @if (session()->has('message'))
                     <div class="alert alert-success alert-dismissible fade show"
+
                         @if (LaravelLocalization::getCurrentLocale() === 'en') style="text-align: left"
                                     @else
 
                                     style="text-align: right" @endif>
+                                    <button type="button" class="close" data-dismiss="alert">×</button>
                         {{ session()->get('message') }}
                     </div>
                 @endif
