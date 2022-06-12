@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\CompanyContactController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\HomeSliderController;
 use App\Http\Controllers\Admin\HowRegisterController;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\PartnersController;
 use App\Http\Controllers\Admin\WhyUsController;
 use Illuminate\Support\Facades\Route;
@@ -94,6 +95,7 @@ Route::group(['middleware' => ['auth', 'user-access:admin'], 'prefix' => 'dashbo
     Route::resource('/how-register', HowRegisterController::class);
 //faq
     Route::resource('faq', FaqController::class);
+    Route::resource('message', MessageController::class);
 });
 
 /*------------------------------------------

@@ -18,4 +18,9 @@ class Message extends Model
     'message',
     'user_id',
     ];
+
+    public function type()
+    {
+        return $this->belongsTo(Sender_type::class, 'sender_type_id');
+    }
 }
