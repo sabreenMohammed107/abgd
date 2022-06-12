@@ -73,8 +73,8 @@ class SchoolSeeder extends Seeder
             'name_en' => 'Gateway International School',
         ],
         [
-            'name_ar' => 'GEMS British International School-Madinty',
-            'name_en' => 'GEMS British International School-Madinty',
+            'name_ar' => 'GEMS British International School-Madinaty ',
+            'name_en' => 'GEMS British International School-Madinaty ',
 
         ],
        [
@@ -95,14 +95,14 @@ class SchoolSeeder extends Seeder
             'name_en' => 'Knowledge Language School',
         ],
         [
-            'name_ar' => 'Madinty Integrated Language Schools (MILS)',
-            'name_en' => 'Madinty Integrated Language Schools (MILS)',
+            'name_ar' => 'Madinaty Integrated Language Schools (MILS)',
+            'name_en' => 'Madinaty Integrated Language Schools (MILS)',
 
         ],
 
  [
-            'name_ar' => ' Madinty Language School',
-            'name_en' => ' Madinty Language School',
+            'name_ar' => ' Madinaty Language School',
+            'name_en' => ' Madinaty Language School',
         ],
         [
             'name_ar' => 'Metropolitan School',

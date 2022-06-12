@@ -216,7 +216,7 @@ PREMIER UPVC comes in a different color based on the market and customer needs f
 'school_message'=>'School name or other schools field  is required',
 'message_required'=>'Message is required',
 'email_required'=>'ُEmail is required',
-'name_regex'=>'UserName must be at least 1 leeter without special characters',
+'name_regex'=>'UserName should be at least 4 characters, special characters not allowed ',
 ];
 
 
