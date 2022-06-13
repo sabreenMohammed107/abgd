@@ -17,22 +17,54 @@
           </a>
 
         </li>
-
         <li class="treeview">
+            <a href="#">
+              <i class="fa fa-files-o"></i>
+              <span>اداره محتوى الموقع</span>
+              <i class="fa fa-angle-left pull-right"></i>
+              {{-- <span class="label label-primary pull-right">4</span> --}}
+            </a>
+            <ul class="treeview-menu">
+              <li><a href="{{ route('home-slider.index') }}"><i class="fa fa-circle-o"></i> السلايدر الرئيسي </a></li>
+              <li><a href="{{ route('admin-company-contact.index') }}" ><i class="fa fa-circle-o"></i> بيانات التواصل</a></li>
+              <li><a href="{{ route('admin-company-contact-home.index') }}" ><i class="fa fa-circle-o"></i> بيانات الصفحه الرئيسيه</a></li>
+              <li><a href="{{ route('admin-partners.index') }}"><i class="fa fa-circle-o"></i> شركاء النجاح</a></li>
+              <li><a href="{{ route('whyus.index') }}"><i class="fa fa-circle-o"></i>  لماذا ابجد</a></li>
+              <li><a href="{{ route('how-register.index') }}"><i class="fa fa-circle-o"></i> خطوات التقديم</a></li>
+            </ul>
+          </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-files-o"></i>
             <span> إعدادات الموقع</span>
             <i class="fa fa-angle-left pull-right"></i>
-            {{-- <span class="label label-primary pull-right">4</span> --}}
           </a>
           <ul class="treeview-menu">
             <li><a href="{{ route('home-slider.index') }}"><i class="fa fa-circle-o"></i> السلايدر الرئيسي </a></li>
             <li><a href="{{ route('admin-company-contact.index') }}" ><i class="fa fa-circle-o"></i> بيانات التواصل</a></li>
             <li><a href="{{ route('admin-partners.index') }}"><i class="fa fa-circle-o"></i> شركاء النجاح</a></li>
             </ul>
-        </li>
+        </li> --}}
 
-        <li class="treeview">
+        {{-- <li class="treeview">
             <a href="#">
               <i class="fa fa-edit"></i> <span>الشركة</span>
               <i class="fa fa-angle-left pull-right"></i>
@@ -44,7 +76,7 @@
 
 
           </ul>
-          </li>
+          </li> --}}
         {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i>
@@ -85,7 +117,7 @@
 
             </ul>
           </li>
-          <li class="treeview">
+          {{-- <li class="treeview">
             <a href="">
               <i class="fa fa-edit"></i>
               <span>الاسئلة الشائعة</span>
@@ -97,7 +129,7 @@
                 </li>
 
               </ul>
-          </li>
+          </li> --}}
 
           <li class="treeview">
             <a href="">

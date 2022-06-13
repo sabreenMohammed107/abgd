@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ClientController;
 use App\Http\Controllers\Admin\CompanyContactController;
+use App\Http\Controllers\Admin\CompanyContactHomeController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\HomeSliderController;
 use App\Http\Controllers\Admin\HowRegisterController;
@@ -90,6 +91,7 @@ Route::group(['middleware' => ['auth', 'user-access:admin'], 'prefix' => 'dashbo
     Route::resource('admin-partners', PartnersController::class);
     //admin-company-contact
     Route::resource('/admin-company-contact', CompanyContactController::class);
+    Route::resource('/admin-company-contact-home', CompanyContactHomeController::class);
 
 //how-register
     Route::resource('/how-register', HowRegisterController::class);

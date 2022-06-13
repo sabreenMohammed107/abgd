@@ -17,11 +17,14 @@
 
 
 
-                  <form action="{{route('admin-company-contact.update',$row->id)}}" method="POST">
+                  <form action="{{route('admin-company-contact-home.update',$row->id)}}" method="POST">
                 @method('PUT')
 				  @csrf
                   <div class="box-body">
-                    {{-- <div class="col-sm-12">
+                    <div>
+                        <h2 style="text-align: center">الهيدر الرئيسي</h2>
+                    </div>
+                    <div class="col-sm-12">
                         <div class="form-group">
                             <label  >{{ __('  عنوان عن الشركة عربي') }}</label>
                             <textarea class="form-control " name="overview_title_ar">{{$row->overview_title_ar}}</textarea>
@@ -59,7 +62,10 @@
                             </div>
                     </div>
 
-
+                    <hr style=" border: 1px dotted rgb(93, 92, 92);">
+                    <div>
+                        <h2 style="text-align: center">من نحن</h2>
+                    </div>
                     <div class="col-sm-12">
                         <div class="form-group">
                             <label  >{{ __('  نص ابجد عربى ') }}</label>
@@ -79,7 +85,10 @@
                         </div>
                 </div>
 
-
+                <hr style=" border: 1px dotted rgb(93, 92, 92);">
+                <div>
+                    <h2 style="text-align: center">لماذا ابجد</h2>
+                </div>
                 <div class="col-sm-12">
                     <div class="form-group">
                         <label  >{{ __(' لماذا ابجد انجليزى') }}</label>
@@ -97,7 +106,11 @@
                 </div>
         </div>
         <hr>
+        <hr style=" border: 1px dotted rgb(93, 92, 92);">
 
+        <div>
+            <h2 style="text-align: center">لماذا ابجد</h2>
+        </div>
             <div class="col-sm-12">
                 <div class="form-group">
                     <label  >{{ __(' التحق بنا انجليزى') }}</label>
@@ -117,7 +130,10 @@
 
 
     <hr>
-
+    <hr style=" border: 1px dotted rgb(93, 92, 92);">
+    <div>
+        <h2 style="text-align: center">خطوات التقديم</h2>
+    </div>
         <div class="col-sm-12">
             <div class="form-group">
                 <label  >{{ __(' سجل معانا انجليزى') }}</label>
@@ -134,8 +150,8 @@
 
         </div>
 </div>
-<hr> --}}
-
+<hr>
+{{--
     <div class="col-sm-12">
         <div class="form-group">
             <label  >{{ __(' تواصل معنا انجليزى') }}</label>
@@ -153,8 +169,8 @@
 
     </div>
 </div>
-<hr>
-                    <div class="col-md-12">
+<hr> --}}
+                    {{-- <div class="col-md-12">
                         <div class="col-sm-6">
                         <div class="form-group">
                             <label  >{{ __(' تليفون') }}</label>
@@ -235,10 +251,10 @@
 
                             </div>
                             </div>
-                    </div>
+                    </div> --}}
                 <div class="col-xs-6 col-sm-6 col-md-6 text-center">
                     <button type="submit" class="btn btn-primary">حفظ</button>
-                    <a href="{{route('admin-company-contact.index')}}" class="btn btn-danger">إلغاء</a>
+                    <a href="{{route('admin-company-contact-home.index')}}" class="btn btn-danger">إلغاء</a>
                 </div>
                 </div>
 
