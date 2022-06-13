@@ -180,7 +180,9 @@ class UsersController extends Controller
         $validator = Validator::make($request->all(), [
             'full_name' => 'required',
             'phone' => ['required', 'min:11', 'max:11', 'regex:/(01)[0-2,5]{1}[0-9]{8}/', 'unique:users'],
-            'name' => ['required', 'unique:users', 'regex:/^(?!.*[@$!%*#?&-.\/_])(?=.*[\sa-zA-Zء-ي])+[^\.]*$/'],
+            //regex:/^(?!.*[@$!%*#?&-.\/_])(?=(.*[\sa-zA-Z|ء-ي]){4})+[^\.]*$//
+            //alpha_num
+            'name' => ['required', 'unique:users', 'min:4','regex:/^(?!.*[@$!%*#?&-.\/_])(?=.*[\sa-zA-Zء-ي])+[^\.]*$/'],
             'child_no' => 'required',
             'total_cost' => 'required',
             // "other_schools" =>"required_without:schools",
@@ -200,6 +202,7 @@ class UsersController extends Controller
             'total_cost.required' => Lang::get('links.fees_required'),
             'name.required' => Lang::get('links.name_required'),
             'name.regex' => Lang::get('links.name_regex'),
+            'name.min' => Lang::get('links.name_regex'),
             // 'other_schools.required_without' => Lang::get('links.school_message'),
             'schools.required_without' => Lang::get('links.school_message'),
             'name.required' => Lang::get('links.name_required'),
