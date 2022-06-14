@@ -19,8 +19,19 @@
         <meta charset="utf-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-        <meta name="description" content="ABGAD very important to give aloan to parents to schools. ABGAD very important to give aloan to parents to schools">
-        <meta name="keywords" content="ABGAD,aloan,قروض ,schools,parents,ابجد ,مدارس">
+        @if (LaravelLocalization::getCurrentLocale() === 'en')
+        <meta name="description" content="Study Now, Pay Later
+        ABGAD is your no-fuss, online tuition loan partner, designed to empower you with the financial resources you need to meet all of your child’s education expenses">
+
+
+    @else
+    <meta name="description" content="اتعلم دلوقتي وادفع بعدين
+    أبجد هو شريكك الرقمي للحصول على الموارد المالية المطلوبة لتمويل المصاريف الدراسية لأولادك">
+
+
+    @endif
+    <meta name="keywords" content="ABGAD,aloan,قروض ,schools,parents,ابجد ,مدارس">
+
         <meta name="author" content="sabreen mohammed & senior steps">
 
 	<!-- Favicon -->
