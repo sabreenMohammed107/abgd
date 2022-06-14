@@ -26,11 +26,15 @@
             </a>
             <ul class="treeview-menu">
               <li><a href="{{ route('home-slider.index') }}"><i class="fa fa-circle-o"></i> السلايدر الرئيسي </a></li>
-              <li><a href="{{ route('admin-company-contact.index') }}" ><i class="fa fa-circle-o"></i> بيانات التواصل</a></li>
               <li><a href="{{ route('admin-company-contact-home.index') }}" ><i class="fa fa-circle-o"></i> بيانات الصفحه الرئيسيه</a></li>
-              <li><a href="{{ route('admin-partners.index') }}"><i class="fa fa-circle-o"></i> شركاء النجاح</a></li>
               <li><a href="{{ route('whyus.index') }}"><i class="fa fa-circle-o"></i>  لماذا ابجد</a></li>
               <li><a href="{{ route('how-register.index') }}"><i class="fa fa-circle-o"></i> خطوات التقديم</a></li>
+              <li><a href="{{ route('admin-partners.index') }}"><i class="fa fa-circle-o"></i> شركاء النجاح</a></li>
+              <li><a href="{{ route('admin-company-contact.index') }}" ><i class="fa fa-circle-o"></i> بيانات التواصل</a></li>
+
+
+
+
             </ul>
           </li>
 
