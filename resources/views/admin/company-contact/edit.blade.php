@@ -202,13 +202,13 @@
                             </div>
                         </div>
 
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <div class="form-group">
                                 <label  >{{ __('  youtube') }}</label>
                                     <input type="text" id="newTitle" name="youtube" value="{{$row->youtube}}" class="form-control"
                                        placeholder=" youtube">
                             </div>
-                            </div>
+                            </div> --}}
 
                         <div class="col-sm-6">
                             <div class="form-group">
