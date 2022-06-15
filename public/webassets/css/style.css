@@ -1030,7 +1030,8 @@ select {
 .fa-facebook-f,
 .fa-linkedin,
 .fa-youtube,
-.fa-instagram {
+.fa-instagram,
+.fa-youtube {
     font-size: 18px;
 }
 

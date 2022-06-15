@@ -296,10 +296,19 @@ $xx= __('links.home')
                         <span><i class="fa-regular fa-envelope"></i></span> <b>{{ $companyContact->email }}</b>
                     </div>
                     <div class="rounded-social-buttons mt-1">
+                        @if($companyContact->facebook)
                         <a class="social-button facebook" href="{{ $companyContact->facebook }}" rel="noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                   @endif
+                   @if($companyContact->twitter)
                         <a class="social-button twitter" href="{{ $companyContact->twitter }}" rel="noreferrer" target="_blank"><i class="fab fa-twitter"></i></a>
+                        @endif
+                   @if($companyContact->linkedin)
                         <a class="social-button linkedin" href="{{ $companyContact->linkedin }}" rel="noreferrer" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        @endif
+                   @if($companyContact->instagram)
                         <a class="social-button instagram" href="{{ $companyContact->instagram }}" rel="noreferrer" target="_blank"><i class="fab fa-instagram"></i></a>
+                        @endif
+
                     </div>
                 </div>
             </div>
