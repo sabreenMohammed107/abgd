@@ -296,6 +296,7 @@ $xx= __('links.home')
                         <span><i class="fa-regular fa-envelope"></i></span> <b>{{ $companyContact->email }}</b>
                     </div>
                     <div class="rounded-social-buttons mt-1">
+
                         @if($companyContact->facebook)
                         <a class="social-button facebook" href="{{ $companyContact->facebook }}" rel="noreferrer" target="_blank"><i class="fab fa-facebook-f"></i></a>
                    @endif
