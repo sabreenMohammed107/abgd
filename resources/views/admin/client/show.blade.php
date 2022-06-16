@@ -60,7 +60,6 @@
             </div>
             <div class="mb-3">
                 <label class="form-label">{{ __('links.otherSchools') }}</label>
-                <select class="form-select form-control" disabled  multiple name="schools[]" style="height: 150px" aria-label="Default select example" style="background-color:white!important;border:1px solid #ced4da !important">
                     <select name="other_schools[]" multiple class="form-control select-multiple" id="selectedshcol">
                         @foreach ($user_parent->otherSchools as $other)
                             <option selected value="{{ $other->school }}">{{ $other->school }}</option>

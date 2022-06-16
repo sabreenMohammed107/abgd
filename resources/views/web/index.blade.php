@@ -6,7 +6,16 @@ $xx= __('links.home')
 @section('title', '' . $xx. '')
 
 @section('content')
+
 <section class="about-sec reveal" id="about-sec">
+    @if (count($errors) > 0)
+    <script>
+
+
+           window.location.href = "{{ LaravelLocalization::localizeUrl('/') }}#contact-sec"
+
+    </script>
+@endif
     <div class="mt-4">
         <div class="container container2">
             <div class="row dir">
