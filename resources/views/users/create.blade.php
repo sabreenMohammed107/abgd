@@ -26,8 +26,8 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>تليفون:</strong>
-            {!! Form::text('phone', null, array('placeholder' => ' تليفون','class' => 'form-control')) !!}
+            <strong>رقم الهاتف :</strong>
+            {!! Form::text('phone', null, array('placeholder' => ' رقم الهاتف ','class' => 'form-control')) !!}
         </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">

@@ -46,17 +46,42 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
+
+        $validator = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
             'roles' => 'required',
             'phone' => 'required|unique:users'
-        ]);
 
+        ], [
+            'name.required' =>'حقل الاسم مطلوب',
+
+            'email.required' =>'حقل البريد الالكتروني مطلوب',
+            'email.email' =>'البريد الالكتروني غير صحيح',
+            'email.unique' =>'حقل البريد الالكترونى موجود بالفعل',
+
+            'password.required' => 'حقل كلمة المرور مطلوب',
+            'password.same' => 'كلمة المرور / تأكيد كلمة المرور لا تتطابق',
+
+            'roles.required' => 'حقل  الصلاحيات مطلوب',
+
+
+            'phone.required' =>'حقل رقم الهاتف  مطلوب',
+
+            'phone.unique' =>'حقل  رقم الهاتف موجود بالفعل',
+
+
+        ]);
+        if ($validator->fails()) {
+
+            return redirect()->back()->withInput()
+                ->withErrors($validator->messages());
+
+        }
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
-        $input['type'] = 'admin';
+        $input['type'] = 1;
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
 
@@ -107,9 +132,27 @@ class UserController extends Controller
 
                 'name' => 'required|unique:users,name,'.$id,
                 'email' => 'required|email|unique:users,email,'.$id,
-                'password' => 'same:confirm-password',
+                'password' => 'required_with:confirmed',
                 'roles' => 'required',
                 'phone' => 'required|unique:users,phone,'.$id,
+
+            ], [
+            'name.required' =>'حقل الاسم مطلوب',
+
+            'email.required' =>'حقل البريد الالكتروني مطلوب',
+            'email.email' =>'البريد الالكتروني غير صحيح',
+            'email.unique' =>'حقل البريد الالكترونى موجود بالفعل',
+
+
+            'password.confirmed' => 'كلمة المرور / تأكيد كلمة المرور لا تتطابق',
+
+            'roles.required' => 'حقل  الصلاحيات مطلوب',
+
+
+            'phone.required' =>'حقل رقم الهاتف  مطلوب',
+
+            'phone.unique' =>'حقل  رقم الهاتف موجود بالفعل',
+
 
         ]);
 
